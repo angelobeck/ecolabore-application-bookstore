@@ -1,0 +1,26 @@
+<template if:true={book}>
+    <p>Nome: {book.text.title.Value}</p>
+    <p if:true={book.text.original}>Do original: {book.text.original.Value}</p>
+    <p>Autor: <ecl-link url={_urlAuthor_} label={book.text.author} /></p>
+    <p if:true={book.text.translator}>Traduzido por: {book.text.translator.Value}</p>
+    <p if:true={book.details.year}>Ano da publicação: {book.details.year}</p>
+    <p if:true={book.details.pages}>Número de páginas: {book.details.pages}</p>
+    <p if:true={book.details.language}>Idioma: {book.details.language}</p>
+    <p if:true={book.format_audio}>Narrado por: <ecl-link url={_urlNarrator_} label={book.text.narrator} /></p>
+    <p>Gênero: <ecl-link url={_urlGenre_} label={book.text.genre.Value} /></p>
+    <p if:true={book.text.keywords}>
+        Palavras-chave:
+        <template for:each={_keywords_} for:item={keyword}>
+            {keyword.separator}
+            <ecl-link url={keyword.url} label={keyword.label} />
+        </template>
+    </p>
+    <h2 class="header">Sinopse</h2>
+    <template for:each={paragraphs} for:item={paragraph}>
+        <p>{paragraph}</p>
+    </template>
+    <h2 class="header">Disponibilidade</h2>
+    <div if:true={book.format_ink}>Temos este livro em tinta. Consulte a disponibilidade para empréstimo na Biblioteca da ACIC</div>
+    <div if:true={book.format_braille}>Temos este livro em braille, em {book.details.braille} volumes. Consulte a disponibilidade para empréstimo na Biblioteca da ACIC</div>
+    <div if:true={book.format_digital}><ecl-link url={_urlReader_}>Leia o livro on-line</ecl-link></div>
+</template>

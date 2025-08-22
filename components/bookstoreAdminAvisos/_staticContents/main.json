@@ -1,0 +1,17 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Avisos"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Reúne avisos de diferentes áreas"
+            }
+        }
+    },
+    "flags": {
+        "modList_show": true
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Administração da Biblioteca"
+            }
+        },
+        "label": {
+            "pt": {
+                "value": "Administração"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Ferramentas administrativas da Biblioteca Virtual da ACIC"
+            }
+        }
+    },
+    "flags": {
+        "module": "bookstoreAdmin",
+        "modNav_show": true
+    }
+}

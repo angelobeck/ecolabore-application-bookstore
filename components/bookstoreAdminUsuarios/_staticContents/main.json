@@ -1,0 +1,19 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Usuários"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Gerencia os usuários da biblioteca."
+            }
+        }
+    },
+    "flags": {
+        "module": "bookstoreAdminUsuarios",
+        "endpoint": "bookstoreAdminUsuarios",
+        "modList_show": true
+    }
+}

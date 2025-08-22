@@ -1,0 +1,19 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Novo grupo"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Cria um novo grupo de usuários"
+            }
+        }
+    },
+    "flags": {
+        "modList_show": true,
+        "module": "bookstoreAdminUsuarios_gruposCadastrar",
+        "endpoint": "bookstoreAdminUsuarios_gruposCadastrar"
+    }
+}

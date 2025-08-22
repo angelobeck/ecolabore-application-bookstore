@@ -1,0 +1,32 @@
+<h1 wire:element={headerElement} class="header" tabindex="0">{_headerContent_}</h1>
+<p aria-live="polite">{_step_}</p>
+
+<div if:true={step} if:compare="1">
+    <ecl-formulary name="bookstoreCadastro_formularyStart" fields={fields} onaction={formularyAction} />
+</div> 
+
+<div if:true={step} if:compare="2">
+    <ecl-formulary name={_formularyName_} fields={fields} onaction={formularyAction} />
+</div>
+
+<div if:true={step} if:compare="3">
+    <ecl-formulary name="bookstoreCadastro_formularyPublic" fields={fields} onaction={formularyAction} />
+</div>
+
+<div if:true={step} if:compare="4">
+    <ecl-formulary name="bookstoreCadastro_formularyLogin" fields={fields} onaction={formularyAction} />
+</div> 
+
+<div if:true={step} if:compare="5">
+    <ecl-formulary name="bookstoreCadastro_formularySubscribeReady" fields={fields} onaction={formularyAction} />
+</div> 
+
+<div if:true={step} if:compare="6">
+    <ecl-formulary name="bookstoreCadastro_formularyDocument" fields={fields} onaction={actionStep6} />
+</div> 
+
+<div if:true={step} if:compare="7">
+        <ecl-formulary name="bookstoreCadastro_formularyFinish" onaction={actionStep7} />
+</div> 
+
+<ecl-modal message={error.message} context={error.context} name="alert" />

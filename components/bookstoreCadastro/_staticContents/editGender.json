@@ -1,0 +1,12 @@
+{
+    "flags": {
+        "filter": "filter_radio"
+    },
+    "text": {
+        "label": {
+            "pt": {
+                "value": "Forma de tratamento"
+            }
+        }
+    }
+}

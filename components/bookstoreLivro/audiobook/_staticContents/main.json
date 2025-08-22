@@ -1,0 +1,18 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Audiolivro"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Permite executar o audiolivro"
+            }
+        }
+    },
+    "flags": {
+        "module": "bookstoreLivro_audiobook",
+        "endpoint": "bookstoreLivro_audiobook"
+    }
+}

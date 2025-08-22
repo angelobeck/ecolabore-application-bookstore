@@ -1,0 +1,15 @@
+{
+    "flags": {
+        "filter": "filter_string",
+        "name": "identifier",
+        "required": true,
+        "target": "identifier"
+    },
+    "text": {
+        "label": {
+            "pt": {
+                "value": "Identificador"
+            }
+        }
+    }
+}

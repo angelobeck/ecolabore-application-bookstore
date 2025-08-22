@@ -1,0 +1,15 @@
+{
+    "flags": {
+        "value": ""
+    },
+    "text": {
+        "label": {
+            "pt": {
+                "value": "Ativo"
+            },
+            "en": {
+                "value": "Active"
+            }
+        }
+    }
+}

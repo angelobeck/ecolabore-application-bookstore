@@ -1,0 +1,10 @@
+{
+    "children": [
+        "~contentDocument",
+        "~editDocumentFile"
+    ],
+    "actions": [
+        "~actionDocumentSubmit",
+        "~actionDocumentLater"
+    ]
+}

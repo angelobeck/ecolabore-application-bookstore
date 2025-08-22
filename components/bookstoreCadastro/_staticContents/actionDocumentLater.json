@@ -1,0 +1,12 @@
+{
+    "flags": {
+        "action": "skip"
+    },
+    "text": {
+        "label": {
+            "pt": {
+                "value": "Enviar documento  mais tarde"
+            }
+        }
+    }
+}

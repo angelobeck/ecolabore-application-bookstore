@@ -1,0 +1,14 @@
+{
+    "flags": {
+        "filter": "filter_string",
+        "name": "original",
+        "target": "text.original.pt.value"
+            },
+    "text": {
+        "label": {
+            "pt": {
+                "value": "Título original"
+            }
+        }
+    }
+}

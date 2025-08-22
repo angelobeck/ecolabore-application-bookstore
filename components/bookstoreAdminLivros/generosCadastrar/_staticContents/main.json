@@ -1,0 +1,19 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Novo gênero"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Cadastra um novo gênero"
+            }
+        }
+    },
+    "flags": {
+        "modList_show": true,
+        "module": "bookstoreAdminLivros_generosCadastrar",
+        "endpoint": "bookstoreAdminLivros_generosCadastrar"
+    }
+}

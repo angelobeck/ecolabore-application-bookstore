@@ -1,0 +1,18 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Livros deste autor"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Lista todos os livros de um autor."
+            }
+        }
+    },
+    "flags": {
+        "module": "bookstoreLivros_autoresDetalhes",
+        "endpoint": "bookstoreLivros_autoresDetalhes"
+    }
+}

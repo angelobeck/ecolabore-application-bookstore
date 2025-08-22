@@ -1,0 +1,61 @@
+<template if:true={step} if:compare="identifier">
+    <h1 class="header">{Application.title.Value}</h1>
+    <label>
+        <p>Informe seu CPF, telefone ou email</p>
+        <div>
+            <input type="text" wire:element={identifierElement} onkeydown={handleIdentifierKeydown} />
+        </div>
+    </label>
+    <button onclick={handleIdentifierAction}>
+        Próxima
+    </button>
+    <div>
+        <ecl-link url={levelUpUrl}>
+            Voltar para {levelUpTitle.Value}
+        </ecl-link>
+    </div>
+</template>
+
+<template if:true={step} if:compare="password">
+    <h1 class="header">{Application.title.Value}</h1>
+    <label>
+        <p>Senha</p>
+        <div>
+            <input type={passwordType} wire:element={passwordElement} readonly={passwordReadonly}
+                onkeydown={handlePasswordKeydown} />
+        </div>
+    </label>
+    <div>
+        <label>
+            <input type="checkbox" onclick={handlePasswordVisibility} disabled={passwordReadonly} />
+            Exibir senha
+        </label>
+    </div>
+    <button onclick={handlePasswordAction} aria-disabled={passwordReadonly}>
+        Conectar
+    </button>
+    <div>
+        <ecl-link url={levelUpUrl}>
+            Voltar para {levelUpTitle.Value}
+        </ecl-link>
+    </div>
+</template>
+
+<template if:true={step} if:compare="welcome">
+    <h1 class="header" wire:element={welcomeElement} tabindex="0">Olá!</h1>
+    <p>Você está conectado à ACIC.</p>
+    <button onclick={handleWelcomeAction}>
+        Ok
+    </button>
+</template>
+
+<template if:true={step} if:compare="error">
+    <h1 class="header" wire:element={errorElement} tabindex="0">Ooops!</h1>
+    <p>{errorMessage}</p>
+    <button onclick={handleErrorRetry}>
+        Tentar novamente
+    </button>
+    <button onclick={handleErrorCancel}>
+        Cancelar
+    </button>
+</template>

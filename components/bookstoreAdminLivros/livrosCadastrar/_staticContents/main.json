@@ -1,0 +1,19 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Catalogar livro"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Cataloga um novo livro na biblioteca"
+            }
+        }
+    },
+    "flags": {
+        "modList_show": true,
+        "module": "bookstoreAdminLivros_livrosCadastrar",
+        "endpoint": "bookstoreAdminLivros_livrosCadastrar"
+    }
+}

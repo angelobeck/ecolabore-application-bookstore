@@ -1,0 +1,16 @@
+{
+    "flags": {
+        "module": "form"
+    },
+    "children": [
+        "~editStatus",
+        "~editUserName",
+        "~editMail",
+        "~editPhone",
+        "~editDocument",
+"~editAccess"
+    ],
+    "actions": [
+        "~actionSave"
+    ]
+}

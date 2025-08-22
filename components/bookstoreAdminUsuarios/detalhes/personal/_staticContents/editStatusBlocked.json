@@ -1,0 +1,15 @@
+{
+    "flags": {
+        "value": "blocked"
+    },
+    "text": {
+        "label": {
+            "pt": {
+                "value": "Bloqueado"
+            },
+            "en": {
+                "value": "Blocked"
+            }
+        }
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Título"
+            }
+        }
+    },
+    "flags": {
+        "module": "bookstore_modTitle"
+    }
+}

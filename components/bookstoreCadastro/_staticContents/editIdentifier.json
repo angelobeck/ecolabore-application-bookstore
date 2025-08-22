@@ -1,0 +1,15 @@
+{
+    "flags": {
+        "filter": "bookstoreCadastro_filterIdentifier",
+        "name": "identifier",
+        "required": true,
+        "target": "identifier"
+    },
+    "text": {
+        "label": {
+            "pt": {
+                "value": "Identificador"
+            }
+        }
+    }
+}

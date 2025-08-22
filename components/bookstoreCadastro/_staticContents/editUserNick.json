@@ -1,0 +1,15 @@
+{
+    "flags": {
+        "filter": "bookstoreCadastro_filterNick",
+        "name": "user_nick",
+        "required": true,
+        "target": "text.nick.pt.value"
+    },
+    "text": {
+        "label": {
+            "pt": {
+                "value": "Nome ou apelido"
+            }
+        }
+    }
+}

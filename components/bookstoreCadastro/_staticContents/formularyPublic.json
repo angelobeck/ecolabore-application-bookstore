@@ -1,0 +1,10 @@
+{
+    "children": [
+        "~editUserNick",
+        "~editUserGender"
+    ],
+    "actions": [
+        "formulary_action_previous",
+        "formulary_action_next"
+    ]
+}

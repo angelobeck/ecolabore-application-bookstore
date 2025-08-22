@@ -1,0 +1,15 @@
+{
+    "flags": {
+        "filter": "filter_string",
+        "name": "genre",
+        "target": "text.genre.pt.value",
+        "required": true
+            },
+    "text": {
+        "label": {
+            "pt": {
+                "value": "Gênero"
+            }
+        }
+    }
+}

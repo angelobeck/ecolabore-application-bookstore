@@ -1,0 +1,19 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Inserir dados"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Importa uma tabela de dados em formato JSON e insere no banco de dados."
+            }
+        }
+    },
+    "flags": {
+        "modList_show": true,
+        "module": "bookstoreAdminLivros_inserirDados",
+        "endpoint": "bookstoreAdminLivros_inserirDados"
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "children": [
+        "~contentSubscribeReady"
+    ],
+    "actions": [
+        "formulary_action_previous",
+        "formulary_action_next"
+    ]
+}

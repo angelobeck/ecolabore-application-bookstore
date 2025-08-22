@@ -1,0 +1,30 @@
+{
+    "flags": {
+        "module": "form"
+    },
+    "children": [
+        "~editTitle",
+        "~editAuthor",
+        "~editOriginal",
+        "~editTranslator",
+        "~editPress",
+        "~editYear",
+        "~editLanguage",
+        "~editGenre",
+        "~editCollection",
+        "~editIndex",
+        "~editSynopsis",
+        "~editKeywords",
+        "~editPages",
+        "~editInk",
+        "~editBraille",
+        "~editDuration",
+        "~editNarrator",
+        "~editPlatform",
+        "~editPublic",
+        "~editNotes"
+    ],
+    "actions": [
+        "~actionSave"
+    ]
+}

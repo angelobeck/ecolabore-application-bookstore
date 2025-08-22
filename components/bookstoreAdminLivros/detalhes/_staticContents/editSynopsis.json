@@ -1,0 +1,16 @@
+{
+    "flags": {
+        "filter": "filter_string",
+        "display": "textarea",
+        "name": "synopsis",
+        "target": "text.synopsis.pt.value",
+        "required": true
+            },
+    "text": {
+        "label": {
+            "pt": {
+                "value": "Sinopse"
+            }
+        }
+    }
+}

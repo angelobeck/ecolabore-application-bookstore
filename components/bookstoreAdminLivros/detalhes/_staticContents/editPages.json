@@ -1,0 +1,14 @@
+{
+    "flags": {
+        "filter": "filter_string",
+        "name": "pages",
+        "target": "details.pages"
+            },
+    "text": {
+        "label": {
+            "pt": {
+                "value": "Páginas"
+            }
+        }
+    }
+}

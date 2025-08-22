@@ -1,0 +1,19 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Gêneros"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Lista todos os gêneros"
+            }
+        }
+    },
+    "flags": {
+        "modList_show": true,
+        "module": "bookstoreLivros_generos",
+        "endpoint": "bookstoreLivros_generos"
+    }
+}

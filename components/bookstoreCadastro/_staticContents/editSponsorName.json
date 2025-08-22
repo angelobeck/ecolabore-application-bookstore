@@ -1,0 +1,15 @@
+{
+    "flags": {
+        "filter": "filter_string",
+        "name": "sponsor_name",
+        "required": true,
+        "target": "text.sponsor.pt.value"
+    },
+    "text": {
+        "label": {
+            "pt": {
+                "value": "Nome completo"
+            }
+        }
+    }
+}

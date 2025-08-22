@@ -1,0 +1,14 @@
+{
+    "flags": {
+        "filter": "filter_checkbox",
+        "name": "ink",
+        "target": "format_ink"
+            },
+    "text": {
+        "label": {
+            "pt": {
+                "value": "Disponível em tinta"
+            }
+        }
+    }
+}

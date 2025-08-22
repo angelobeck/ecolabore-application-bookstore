@@ -1,0 +1,11 @@
+{
+    "flags": {
+        "module": "form"
+    },
+    "children": [
+        "~editUserName"
+    ],
+    "actions": [
+        "~actionSave"
+    ]
+}

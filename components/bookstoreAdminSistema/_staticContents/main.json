@@ -1,0 +1,17 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Sistema"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Ferramentas de sistema e servidor"
+            }
+        }
+    },
+    "flags": {
+        "modList_show": true
+    }
+}

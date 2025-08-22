@@ -1,0 +1,19 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Todos os livros"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Lista todos os livros"
+            }
+        }
+    },
+    "flags": {
+        "modList_show": true,
+        "module": "bookstoreAdminLivros_livrosTodos",
+        "endpoint": "bookstoreAdminLivros_livrosTodos"
+    }
+}

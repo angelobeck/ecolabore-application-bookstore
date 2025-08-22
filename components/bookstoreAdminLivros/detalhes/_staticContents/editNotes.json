@@ -1,0 +1,15 @@
+{
+    "flags": {
+        "filter": "filter_string",
+        "display": "textarea",
+        "name": "notes",
+        "target": "text.notes.pt.value"
+            },
+    "text": {
+        "label": {
+            "pt": {
+                "value": "Observações"
+            }
+        }
+    }
+}

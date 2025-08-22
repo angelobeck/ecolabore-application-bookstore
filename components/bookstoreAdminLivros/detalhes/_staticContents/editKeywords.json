@@ -1,0 +1,15 @@
+{
+    "flags": {
+        "filter": "filter_string",
+        "name": "keywords",
+        "target": "text.keywords.pt.value",
+        "required": true
+    },
+    "text": {
+        "label": {
+            "pt": {
+                "value": "Palavras-chave"
+            }
+        }
+    }
+}

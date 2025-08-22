@@ -1,0 +1,14 @@
+{
+    "flags": {
+        "filter": "filter_string",
+        "name": "index",
+        "target": "details.index"
+            },
+    "text": {
+        "label": {
+            "pt": {
+                "value": "Número do volume na série"
+            }
+        }
+    }
+}

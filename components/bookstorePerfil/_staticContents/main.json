@@ -1,0 +1,24 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Meu perfil"
+            }
+        },
+        "label": {
+            "pt": {
+                "value": "Perfil"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Minhas informações pessoais"
+            }
+        }
+    },
+    "flags": {
+        "modNav_show": true,
+        "module": "bookstorePerfil",
+        "endpoint": "bookstorePerfil"
+    }
+}

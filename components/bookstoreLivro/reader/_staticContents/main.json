@@ -1,0 +1,18 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Leitura on-line"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Permite ler o livro"
+            }
+        }
+    },
+    "flags": {
+        "module": "bookstoreLivro_reader",
+        "endpoint": "bookstoreLivro_reader"
+    }
+}

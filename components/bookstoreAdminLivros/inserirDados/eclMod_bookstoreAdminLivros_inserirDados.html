@@ -1,0 +1,14 @@
+
+<label>
+    Dados a inserir
+    <textarea style="width:100%" wire:element={input}></textarea>
+</label>
+<button onclick={handleClick}>
+    Enviar requisição
+</button>
+<label>
+    Recebido
+    <textarea style="width:100%">
+        {raw}
+    </textarea>
+</label>

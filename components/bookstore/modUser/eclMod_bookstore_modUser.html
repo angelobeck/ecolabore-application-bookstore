@@ -1,0 +1,18 @@
+<template if:true={isConnected}>
+    Olá {User.title.Value}
+    <div>
+    <ecl-link url={profile_url}>{Label.bookstore_modUser_profile.Value}</ecl-link>
+    </div>
+    <div>
+    <ecl-button onclick={handleLogout}>Desconectar</ecl-button>
+    </div>
+</template>
+
+<template if:false={isConnected}>
+    <p>Se você já é cadastrado, basta 
+    <ecl-link url={login_url}>conectar</ecl-link>
+    </p>
+    <p>Seja membro da Biblioteca Virtual da ACIC você também!
+    <ecl-link url={subscribe_url}>Quero cadastrar-me agora</ecl-link>
+    </p>
+</template>

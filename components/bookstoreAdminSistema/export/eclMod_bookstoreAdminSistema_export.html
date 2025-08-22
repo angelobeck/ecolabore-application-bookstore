@@ -1,0 +1,14 @@
+
+<label>
+    Nome do arquivo
+    <input type="text" wire:element={fileName} />
+</label>
+<button onclick={handleClick}>
+    Exportar
+</button>
+<label>
+    Recebido
+    <textarea style="width:100%">
+        {response}
+    </textarea>
+</label>

@@ -1,0 +1,19 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Cadastrar usuário"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Cadastra um novo usuário"
+            }
+        }
+    },
+    "flags": {
+        "modList_show": true,
+        "module": "bookstoreAdminUsuarios_usuariosCadastrar",
+        "endpoint": "bookstoreAdminUsuarios_usuariosCadastrar"
+    }
+}

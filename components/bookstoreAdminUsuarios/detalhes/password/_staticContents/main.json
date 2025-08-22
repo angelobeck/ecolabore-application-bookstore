@@ -1,0 +1,19 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Redefinir senha"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Permite redefinir a senha do usuário."
+            }
+        }
+    },
+    "flags": {
+        "module": "bookstoreAdminUsuarios_detalhes_password",
+        "endpoint": "bookstoreAdminUsuarios_detalhes_password",
+        "modList_show": true
+    }
+}

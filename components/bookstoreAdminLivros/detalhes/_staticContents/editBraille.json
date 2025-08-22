@@ -1,0 +1,14 @@
+{
+    "flags": {
+        "filter": "filter_string",
+        "name": "braille",
+        "target": "details.braille"
+    },
+    "text": {
+        "label": {
+            "pt": {
+                "value": "Número de volumes em braille"
+            }
+        }
+    }
+}

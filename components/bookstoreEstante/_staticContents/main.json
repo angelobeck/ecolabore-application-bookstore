@@ -1,0 +1,24 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Minha estante"
+            }
+        },
+        "label": {
+            "pt": {
+                "value": "Minha estante"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Ferramentas do usuário: livros que estou lendo, minhas resenhas, meus lembretes, meu perfil etc"
+            }
+        }
+    },
+    "flags": {
+        "modNav_show": true,
+        "module": "bookstoreEstante",
+        "endpoint": "bookstoreEstante"
+    }
+}

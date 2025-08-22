@@ -1,0 +1,12 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Usuário"
+            }
+        }
+    },
+    "flags": {
+        "module": "bookstore_modUser"
+    }
+}

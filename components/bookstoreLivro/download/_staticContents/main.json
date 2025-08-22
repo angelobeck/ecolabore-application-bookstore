@@ -1,0 +1,18 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Download"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Permite baixar os arquivos digitais"
+            }
+        }
+    },
+    "flags": {
+        "module": "bookstoreLivro_download",
+        "endpoint": "bookstoreLivro_download"
+    }
+}

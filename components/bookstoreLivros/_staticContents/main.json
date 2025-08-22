@@ -1,0 +1,24 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Pesquisar"
+            }
+        },
+        "label": {
+            "pt": {
+                "value": "Pesquisar"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Pesquisar por livros na Biblioteca Virtual da ACIC"
+            }
+        }
+    },
+    "flags": {
+        "modNav_show": true,
+        "module": "bookstoreLivros",
+        "endpoint": "bookstoreLivros"
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Comunidade"
+            }
+        },
+        "label": {
+            "pt": {
+                "value": "Comunidade"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Espaço para a troca de experiências entre os usuários da Biblioteca Virtual da ACIC"
+            }
+        }
+    },
+    "flags": {
+        "modNav_show": true
+    }
+}

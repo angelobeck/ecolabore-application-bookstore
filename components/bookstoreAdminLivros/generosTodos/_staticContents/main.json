@@ -1,0 +1,19 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Todos os gêneros"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Lista todos os gêneros"
+            }
+        }
+    },
+    "flags": {
+        "modList_show": true,
+        "module": "bookstoreAdminLivros_generosTodos",
+        "endpoint": "bookstoreAdminLivros_generosTodos"
+    }
+}

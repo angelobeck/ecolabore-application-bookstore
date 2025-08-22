@@ -1,0 +1,15 @@
+{
+    "flags": {
+        "filter": "filter_string",
+        "name": "status",
+        "required": true,
+        "target": "status"
+    },
+    "text": {
+        "label": {
+            "pt": {
+                "value": "Status"
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Sobre a Biblioteca Virtual da ACIC"
+            }
+        },
+        "label": {
+            "pt": {
+                "value": "Sobre"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Sobre a Biblioteca Virtual da ACIC"
+            }
+        }
+    },
+    "flags": {
+        "modList_show": true
+    }
+}

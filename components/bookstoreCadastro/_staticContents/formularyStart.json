@@ -1,0 +1,12 @@
+{
+    "children": [
+        "~editGender",
+        "~contentSponsor",
+        "~editUserName",
+        "~editBornDate",
+        "~editCountry"
+    ],
+    "actions": [
+        "formulary_action_next"
+    ]
+}

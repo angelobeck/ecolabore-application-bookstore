@@ -1,0 +1,19 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Títulos"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Lista todos os títulos"
+            }
+        }
+    },
+    "flags": {
+        "modList_show": true,
+        "module": "bookstoreLivros_titulos",
+        "endpoint": "bookstoreLivros_titulos"
+    }
+}

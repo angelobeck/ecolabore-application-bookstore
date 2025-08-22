@@ -1,0 +1,15 @@
+{
+    "flags": {
+        "filter": "filter_string",
+        "name": "document",
+        "required": true,
+        "target": "details.document"
+    },
+    "text": {
+        "label": {
+            "pt": {
+                "value": "CPF"
+            }
+        }
+    }
+}

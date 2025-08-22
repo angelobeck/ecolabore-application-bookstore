@@ -1,0 +1,19 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Requisição"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Testa uma requisição com o servidor"
+            }
+        }
+    },
+    "flags": {
+        "modList_show": true,
+        "module": "bookstoreAdminSistema_request",
+        "endpoint": "bookstoreAdminSistema_request"
+    }
+}

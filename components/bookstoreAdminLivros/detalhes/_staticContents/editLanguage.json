@@ -1,0 +1,14 @@
+{
+    "flags": {
+        "filter": "filter_string",
+        "name": "language",
+        "target": "details.language"
+            },
+    "text": {
+        "label": {
+            "pt": {
+                "value": "Idioma"
+            }
+        }
+    }
+}

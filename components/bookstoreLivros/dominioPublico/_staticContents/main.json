@@ -1,0 +1,19 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Domínio Púplico"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Lista todos os títulos em domínio público"
+            }
+        }
+    },
+    "flags": {
+        "modList_show": true,
+        "module": "bookstoreLivros_dominioPublico",
+        "endpoint": "bookstoreLivros_dominioPublico"
+    }
+}

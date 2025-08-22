@@ -1,0 +1,19 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Livros"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Gerencia os livros da biblioteca"
+            }
+        }
+    },
+    "flags": {
+        "module": "bookstoreAdminLivros",
+        "endpoint": "bookstoreAdminLivros",
+        "modList_show": true
+    }
+}

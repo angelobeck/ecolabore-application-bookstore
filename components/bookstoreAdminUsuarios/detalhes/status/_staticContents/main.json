@@ -1,0 +1,19 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Status"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Bloqueia, desbloqueia ou exclui o usuário."
+            }
+        }
+    },
+    "flags": {
+        "module": "bookstoreAdminUsuarios_detalhes_status",
+        "endpoint": "bookstoreAdminUsuarios_detalhes_status",
+        "modList_show": true
+    }
+}

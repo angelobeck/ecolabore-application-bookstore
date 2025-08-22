@@ -1,0 +1,19 @@
+    {
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Exportar"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Gera os arquivos necessários para implantação no servidor"
+            }
+        }
+    },
+    "flags": {
+        "modList_show": true,
+        "module": "bookstoreAdminSistema_export",
+        "endpoint": "bookstoreAdminSistema_export"
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "text": {
+        "title": {
+"pt": {
+    "value": "Ooops!"
+}
+        },
+        "content": {
+            "pt": {
+                "value": "O identificador deve ter pelo menos 3 caracteres, e deve ser composto somente por letras minúsculas sem acentos. Você pode usar o caractere sublinhado '_' ou o hifem '-' para separar as palavras se quiser."
+            }
+        }
+    }
+}

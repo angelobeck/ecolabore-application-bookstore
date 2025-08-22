@@ -1,0 +1,12 @@
+{
+    "flags": {
+        "action": "send"
+    },
+    "text": {
+        "label": {
+            "pt": {
+                "value": "Enviar documento  agora"
+            }
+        }
+    }
+}

@@ -1,0 +1,7 @@
+<h2 class="header">{narrator.text.title.Value}</h2>
+<div for:each={_children_} for:item={child}>
+    <div>
+        <ecl-link url={child.url}>{child.title.Value}</ecl-link>
+        <div>{child.description.Value}</div>
+    </div>
+</div>

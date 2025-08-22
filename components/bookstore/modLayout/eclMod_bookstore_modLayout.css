@@ -1,0 +1,17 @@
+
+* { box-sizing:border-box; }
+
+body { background-color:#000; color:#fff; font-family:Arial, Helvetica, sans-serif; font-size:100%; }
+.button { color:#fc9; border:1px solid #fc9; border-radius:8px; padding:8px; font-weight:bold; }
+.button:focus { border:1px solid #f9c; color:#f9c; outline:1px doted #f9c; outline-offset:4px; }
+.field { color:#9fc; }
+.field.focus { color:#f9c;  outline:1px doted #f9c; outline-offset:4px; }
+.field input[type='text'], .field input[type='password'], .field textarea { background-color:#000; color:#fff; border: 1px solid #9fc; }
+.field.focus input[type='text'], .field.focus input[type='password'], .field.focus textarea { border: 1px solid #f9c; outline-width:0; }
+.formulary label { display:block; }
+.header { color:#ffc; }
+.link { color:#9cf; text-decoration:underline; font-weight:bold; }
+.link:visited { color:#9cf; }
+.link:active, .link:focus, .link:hover { color:#f9c; }
+.link:focus { outline:1px doted #f9c; outline-offset:4px; }
+textarea { width:100%; }

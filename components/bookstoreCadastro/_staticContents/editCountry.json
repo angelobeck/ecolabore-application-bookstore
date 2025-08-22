@@ -1,0 +1,15 @@
+{
+    "flags": {
+        "filter": "filter_string",
+        "name": "country",
+        "required": true,
+        "target": "details.country"
+    },
+    "text": {
+        "label": {
+            "pt": {
+                "value": "País de origem"
+            }
+        }
+    }
+}

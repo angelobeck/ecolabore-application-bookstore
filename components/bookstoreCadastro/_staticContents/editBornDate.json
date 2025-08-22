@@ -1,0 +1,15 @@
+{
+    "flags": {
+        "filter": "bookstoreCadastro_filterBornDate",
+        "name": "bornDate",
+        "required": true,
+        "target": "details.bornDate"
+    },
+    "text": {
+        "label": {
+            "pt": {
+                "value": "Data de nascimento"
+            }
+        }
+    }
+}

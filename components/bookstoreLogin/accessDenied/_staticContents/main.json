@@ -1,0 +1,15 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Acesso negado"
+            },
+            "en": {
+                "value": "Access denied"
+            }
+        }
+    },
+    "flags": {
+        "module": "bookstoreLogin_accessDenied"
+    }
+}

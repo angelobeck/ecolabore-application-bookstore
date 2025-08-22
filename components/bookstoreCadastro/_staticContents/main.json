@@ -1,0 +1,23 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Cadastrar-se"
+            }
+        },
+        "label": {
+            "pt": {
+                "value": "Cadastrar-se"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Iniciar o cadastro de um novo membro na Biblioteca Virtual da ACIC"
+            }
+        }
+    },
+    "flags": {
+        "module": "bookstoreCadastro",
+        "endpoint": "bookstoreCadastro"
+    }
+}

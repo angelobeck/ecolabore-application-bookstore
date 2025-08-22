@@ -1,0 +1,15 @@
+{
+    "flags": {
+        "filter": "filter_string",
+        "name": "phone",
+        "required": true,
+        "target": "details.phone"
+    },
+    "text": {
+        "label": {
+            "pt": {
+                "value": "Telefone com código de área"
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "text": {
+        "title": {
+"pt": {
+    "value": "Ooops!"
+}
+        },
+        "content": {
+            "pt": {
+                "value": "A data de nascimento não parece ser válida. Use o formato dd/mm/aaaa onde 'dd' representa os dias com 2 dígitos, 'mm' representa o mês com 2 dígitos e 'aaaa' representa o ano com 4 dígitos."
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Dados pessoais"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Permite a edição dos dados cadastrais do usuário"
+            }
+        }
+    },
+    "flags": {
+        "module": "bookstoreAdminUsuarios_detalhes_personal",
+        "endpoint": "bookstoreAdminUsuarios_detalhes_personal",
+        "modList_show": true
+    }
+}

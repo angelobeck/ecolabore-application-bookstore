@@ -1,0 +1,13 @@
+{
+    "children": [
+        "~editBornDate",
+        "~editCountry",
+        "~editCPF",
+        "~editIdentifier",
+        "~editMail",
+        "~editPassword",
+        "~editPhone",
+        "~editUserName",
+        "~editUserNick"
+    ]
+}

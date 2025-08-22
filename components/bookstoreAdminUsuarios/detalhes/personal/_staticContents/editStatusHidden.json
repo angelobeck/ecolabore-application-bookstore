@@ -1,0 +1,15 @@
+{
+    "flags": {
+        "value": "hidden"
+    },
+    "text": {
+        "label": {
+            "pt": {
+                "value": "Oculto"
+            },
+            "en": {
+                "value": "Hidden"
+            }
+        }
+        }
+}

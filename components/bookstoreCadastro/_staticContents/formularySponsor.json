@@ -1,0 +1,12 @@
+{
+    "children": [
+        "~editSponsorName",
+        "~editMail",
+        "~editPhone",
+        "~editCPF"
+    ],
+    "actions": [
+        "formulary_action_previous",
+        "formulary_action_next"
+    ]
+}
