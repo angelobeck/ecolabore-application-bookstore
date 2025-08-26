@@ -5,7 +5,7 @@ class eclEndpoint_bookstoreAdminLivros_inserirDados extends eclEndpoint
 
     public function dispatch(array $input): array
     {
-        global $store;
+        global $io, $store;
         set_time_limit(60);
         $message = count($input);
 
@@ -101,11 +101,23 @@ class eclEndpoint_bookstoreAdminLivros_inserirDados extends eclEndpoint
             $data['details']['keywords2'] = $keywords2;
 
             $data['keywords'] = eclIo_database::filterKeywords(trim($keywords1 . ' ' . $keywords2 . ' ' . $keywords3));
+
+                        if (strpos($data['keywords'], 'eroti') !== false)
+                $data['adult'] = 1;
+
             $store->bookstore_book->insert($data);
             $counter++;
         }
 
         foreach ($author as $name => $title) {
+            $where = [
+                'name' => $name,
+                'mode' => eclStore_bookstore_book::MODE_AUTHOR
+            ];
+            $rows = $io->database->select($store->bookstore_book, $where);
+            if ($rows)
+                continue;
+
             $data = [
                 'name' => $name,
                 'mode' => eclStore_bookstore_book::MODE_AUTHOR,
@@ -115,6 +127,14 @@ class eclEndpoint_bookstoreAdminLivros_inserirDados extends eclEndpoint
         }
 
         foreach ($genre as $name => $title) {
+            $where = [
+                'name' => $name,
+                'mode' => eclStore_bookstore_book::MODE_GENRE
+            ];
+            $rows = $io->database->select($store->bookstore_book, $where);
+            if ($rows)
+                continue;
+
             $data = [
                 'name' => $name,
                 'mode' => eclStore_bookstore_book::MODE_GENRE,
@@ -124,6 +144,14 @@ class eclEndpoint_bookstoreAdminLivros_inserirDados extends eclEndpoint
         }
 
         foreach ($narrator as $name => $title) {
+            $where = [
+                'name' => $name,
+                'mode' => eclStore_bookstore_book::MODE_NARRATOR
+            ];
+            $rows = $io->database->select($store->bookstore_book, $where);
+            if ($rows)
+                continue;
+
             $data = [
                 'name' => $name,
                 'mode' => eclStore_bookstore_book::MODE_NARRATOR,
@@ -133,6 +161,14 @@ class eclEndpoint_bookstoreAdminLivros_inserirDados extends eclEndpoint
         }
 
         foreach ($collection as $name => $title) {
+            $where = [
+                'name' => $name,
+                'mode' => eclStore_bookstore_book::MODE_COLLECTION
+            ];
+            $rows = $io->database->select($store->bookstore_book, $where);
+            if ($rows)
+                continue;
+
             $data = [
                 'name' => $name,
                 'mode' => eclStore_bookstore_book::MODE_COLLECTION,

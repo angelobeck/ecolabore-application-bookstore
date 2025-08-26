@@ -23,7 +23,7 @@ class eclMod_bookstoreAdminLivros_detalhes_registro extends eclMod {
         if (action === 'save') {
             io.request(formulary.fields)
                 .then(fields => {
-                    let path = [...page.application.parent.path, fields.id];
+                    let path = page.application.parent.path;
                     navigate(page.url(path));
                 })
                 .catch((error, raw) => {

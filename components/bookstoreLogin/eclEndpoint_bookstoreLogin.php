@@ -51,9 +51,9 @@ class eclEndpoint_bookstoreLogin extends eclEndpoint
         $createdSession = &$store->session->create();
         $createdSession['session']['user'] = ['name' => $user['name']];
 
-        if ($user['kid'] < TIME)
+        if (isset($user['kid']) and $user['kid'] < TIME)
             $groups['-kids'] = 1;
-        if ($user['verified'])
+        if (isset($user['verified']) and $user['verified'])
             $groups['-verified'] = 1;
         foreach (explode(',', ADMIN_HELPERS) as $helperName) {
             $helperName = trim($helperName);

@@ -20,11 +20,15 @@ class eclEndpoint_bookstoreLivros extends eclEndpoint
         if (!$keywords)
             return ['error' => ['message' => 'O texto a pesquisar é muito curto']];
 
+        $user = $this->findLoggedUser();
         $where = [];
         $where['mode'] = eclStore_bookstore_book::MODE_BOOK;
         $where['keywords'] = implode(' ', $keywords);
-        if (isset($input['kids']))
-            $where['kids'] = 1;
+
+        if(!isset($user['kid']) or $user['kid'] > TIME)
+            $where['adult'] = 0;
+        if(!$user)
+            $where['public'] = 1;
 
         $rows = $io->database->select($store->bookstore_book, $where, 100);
 
@@ -59,6 +63,29 @@ class eclEndpoint_bookstoreLivros extends eclEndpoint
                 'message' => 'Pesquisando...',
                 'children' => $sorted
             ]
+        ];
+    }
+
+    private function findLoggedUser(): array
+    {
+        global $store;
+
+        if (!isset($this->page->session['user']['name']))
+            return [];
+
+        if ($this->page->session['user']['name'] == ADMIN_NAME)
+            return [
+                'verified' => 1,
+                'kid' => 0
+            ];
+
+        $user = $store->user->open($this->page->session['user']['name']);
+        if (!$user)
+            return [];
+
+        return [
+            'verified' => $user['verified'],
+            'kid' => $user['kid']
         ];
     }
 

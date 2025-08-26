@@ -1,6 +1,6 @@
 <h1 wire:element={headerElement} class="header" tabindex="0">{_headerContent_}</h1>
 <p aria-live="polite">{_step_}</p>
-
+{raw}
 <div if:true={step} if:compare="1">
     <ecl-formulary name="bookstoreCadastro_formularyStart" fields={fields} onaction={formularyAction} />
 </div> 

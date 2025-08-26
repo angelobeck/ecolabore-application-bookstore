@@ -2,7 +2,9 @@
     "flags": {
         "filter": "filter_checkbox",
         "name": "ink",
-        "target": "format_ink"
+        "target": "format_ink",
+        "trueValue": 1,
+        "falseValue": 0
             },
     "text": {
         "label": {

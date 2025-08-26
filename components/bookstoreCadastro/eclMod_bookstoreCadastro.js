@@ -62,13 +62,21 @@ class eclMod_bookstoreCadastro extends eclMod {
             };
             io.request(data)
                 .then(response => {
+                    if (this.step === 5 && response.user) {
+                        page.session.user = response.user;
+                        page.sessionUpdate();
+                        page.domain.reset();
+                    }
+
                     this.fields = response.fields;
                     this.step++;
                 })
                 .catch((error, raw) => {
-                    this.raw = raw;
                     this.error = error;
-                    page.alertOpen('alert');
+                    if (error.message)
+                        page.alertOpen('alert');
+                    else
+                        this.raw = raw;
                 });
         } else {
             this.step--;

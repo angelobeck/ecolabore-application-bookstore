@@ -15,6 +15,49 @@ class eclEndpoint_bookstoreCadastro extends eclEndpoint
 
         if ($formulary->sanitize($input['fields'])) {
             if ($input['step'] === 5) {
+                $data = $formulary->data;
+
+                $user = [
+                    'name' => $data['identifier'],
+                    'phone' => $data['details']['phone'],
+                    'mail' => $data['details']['mail'],
+                    'document' => $data['details']['document'],
+                    'password' => $data['password'],
+                    'kid' => $data['minor']
+                ];
+
+                $userId = $store->user->insert($user);
+
+                $data['name'] = '-personal';
+                $data['mode'] = 'register';
+                $data['encrypt'] = true;
+                $store->userContent->insert($userId, $data);
+
+                $userPublic = [
+                    'name' => '-public',
+                    'mode' => 'register',
+                    'text' => ['title' => $data['text']['nick']]
+                ];
+                $store->userContent->insert($userId, $userPublic);
+
+                $createdSession = &$store->session->create();
+                $createdSession['session']['user'] = ['name' => $user['name']];
+
+                $groups = [];
+                $session = [];
+                if (isset($user['kid']) and $user['kid'] > TIME)
+                    $groups['-kids'] = 1;
+
+                $session['name'] = $user['name'];
+                $session['text'] = ['title' => $userPublic['text']['title']];
+                $session['groups'] = $groups;
+                $session['sessionId'] = $createdSession['name'];
+                $session['sessionKey'] = $createdSession['key'];
+
+                return $this->response([
+                    'user' => $session,
+                    'fields' => $formulary->data
+                ]);
 
             } else if ($input['step'] === 6) {
 

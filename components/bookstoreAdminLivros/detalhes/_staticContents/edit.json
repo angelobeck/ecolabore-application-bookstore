@@ -15,6 +15,7 @@
         "~editIndex",
         "~editSynopsis",
         "~editKeywords",
+        "~editAdult",
         "~editPages",
         "~editInk",
         "~editBraille",

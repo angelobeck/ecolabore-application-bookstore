@@ -1,14 +1,16 @@
 
 class eclMod_bookstoreLivro extends eclMod {
     book = '';
+    files = [];
     paragraphs = [];
 
     connectedCallback() {
         this.track('book');
 
         io.request()
-            .then(book => {
-                this.book = book;
+            .then(response => {
+                this.book = response.book;
+                this.files = response.files;
                 this.paragraphs = page.selectLanguage(this.book.text.synopsis).value.split("\n");
             })
             .catch(error => {
@@ -58,6 +60,14 @@ class eclMod_bookstoreLivro extends eclMod {
 
     get _urlDownload_() {
         return page.url([...page.application.path, 'download']);
+    }
+
+    get _readerEnabled_() {
+        for (let i = 0; i < this.files.length; i++) {
+            if (this.files[i] === this.book.name + '.txt')
+                return true;
+        }
+        return false;
     }
 
 }

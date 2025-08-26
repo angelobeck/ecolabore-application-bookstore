@@ -44,22 +44,30 @@ class eclFilter_bookstoreCadastro_filterBornDate extends eclFilter
         $century = substr($year, 0, 2);
 
         $bornDate = strtotime($year . '-' . $month . '-' . $day);
-        $minor = 14 * 365 * 24 * 60 * 60;
-        $kid = 18 * 365 * 24 * 60 * 60;
+
+        $year18 = strval(intval($year) + 18);
+        $minor = strtotime($year18 . '-' . $month . '-' . $day);
+        if ($minor < TIME)
+            $minor = 0;
+
+        $year14 = strval(intval($year) + 14);
+        $kid = strtotime($year14 . '-' . $month . '-' . $day);
+        if ($kid < TIME)
+            $kid = 0;
 
         if (
             $bornDate > TIME
             || intval($day) > 31
-|| intval($month) > 12
-|| ($century != '19' and $century != '20')
-            )
+            || intval($month) > 12
+            || ($century != '19' and $century != '20')
+        )
             return [
                 'message' => 'bookstoreCadastro_filterBornDate_invalidValue',
                 'context' => []
             ];
 
-        $formulary->setField('kid', $bornDate + $kid > TIME);
-        $formulary->setField('minor', $bornDate + $minor > TIME);
+        $formulary->setField('kid', $kid);
+        $formulary->setField('minor', $minor);
 
         $formulary->setField($control['target'], $day . '/' . $month . '/' . $year);
         return [];

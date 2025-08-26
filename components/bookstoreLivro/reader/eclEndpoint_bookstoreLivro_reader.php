@@ -7,37 +7,15 @@ class eclEndpoint_bookstoreLivro_reader extends eclEndpoint
     {
         global $io, $store;
         $name = $this->page->application->parent->name;
-        $error = ['error' => ['message' => "Livro {$name} não encontrado"]];
-        $rows = $io->database->select($store->bookstore_book, ['name' => $name], 1);
-        if (!$rows)
-            return $error;
-        $data = $rows[0];
-        if (!isset($data['files']))
-            return $error;
-        $found = false;
-        foreach ($data['files'] as $file) {
-            $pos = strpos($file, '.txt');
-            if ($pos) {
-                $fileName = $file;
-                $found = true;
-                break;
-            }
-        }
 
-        if (!$found)
-            return $error;
-
-        $location = PATH_ROOT . 'cache/livros/' . $fileName;
+        $location = PATH_ROOT . 'livros/' . $name . '/' . $name . '.txt';
         if (!is_file($location))
-            return $error;
+            return $this->response(['content' => 'O livro ' . $name . ' não foi encontrado.']);
 
-        $buffer = mb_convert_encoding(file_get_contents($location), 'UTF-8', ['ISO-8859-1', 'UTF-8']);
-        return [
-            'response' => [
-                'content' => $buffer
-            ]
-        ];
+        $content = file_get_contents($location);
+        $content = mb_convert_encoding($content, 'UTF-8', 'ISO-8859-1');
 
+        return $this->response(['content' => $content]);
     }
 
 }

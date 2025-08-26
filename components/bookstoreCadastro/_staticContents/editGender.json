@@ -8,5 +8,9 @@
                 "value": "Forma de tratamento"
             }
         }
-    }
+    },
+    "children": [
+        "~editGenderMale",
+        "~editGenderFemale"
+    ]
 }

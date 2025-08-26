@@ -22,5 +22,5 @@
     <h2 class="header">Disponibilidade</h2>
     <div if:true={book.format_ink}>Temos este livro em tinta. Consulte a disponibilidade para empréstimo na Biblioteca da ACIC</div>
     <div if:true={book.format_braille}>Temos este livro em braille, em {book.details.braille} volumes. Consulte a disponibilidade para empréstimo na Biblioteca da ACIC</div>
-    <div if:true={book.format_digital}><ecl-link url={_urlReader_}>Leia o livro on-line</ecl-link></div>
+    <div if:true={_readerEnabled_}><ecl-link url={_urlReader_}>Leia o livro on-line</ecl-link></div>
 </template>
