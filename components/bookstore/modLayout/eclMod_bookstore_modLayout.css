@@ -17,10 +17,11 @@ body { background-color:#000; color:#fff; font-family:Arial, Helvetica, sans-ser
 textarea { width:100%; }
 .field_text_input {width:100%; height: 3rem; margin-bottom: 16px; }
 .field_text_input:hover, .field_text_input:focus {outline: 2px dotted #008000;}
-.general_button { background-color:#fca; color:#000; border-radius:8px; padding:8px; font-weight:bold; }
+.general_button { background-color:#fca; color:#000; border-radius:8px; padding:8px; font-weight:bold; margin: 0 8px; }
 .general_button:focus{border:1px dotted #f9c}
 .nav_list_search{display:flex; width:100%; height:4em;}
 .nav_list_search_item{margin: auto;}
+.alert{background-color:#000; color:#fff; width: 100%; height:100%;}
 
 
 @media (max-width: 768px){
