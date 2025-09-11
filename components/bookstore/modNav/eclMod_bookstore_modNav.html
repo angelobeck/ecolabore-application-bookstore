@@ -1,9 +1,9 @@
 <hr />
-<nav for:each={_children_} for:item={item} style="display:flex;width:100%; height:  4em; justify-content: space-between; align-items: center; padding: 0 32px;">
+<nav for:each={_children_} for:item={item} class="main_bottom_menu">
         <ecl-link
             aria-current={item.current}
             label={item.label}
             url={item.url} 
-            
+            class="main_bottom_menu_item"
         />
 </nav>
