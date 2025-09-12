@@ -1,1 +1,39 @@
-<mod name="user" />
+<template if:true={userContent}>
+    <p>{userContent.text.title.Value}</p>
+    <p if:true={userContent.text.description}>{userContent.text.description.Value}</p>
+
+    <template if:true={user.verified} if:compare="0">
+        <h2 class="header">Aguardando documentação</h2>
+        <p>Para ter acesso total à biblioteca, precisamos que você nos envie um documento que comprove sua deficiência.</p>
+
+        <ecl-file-upload onloadend={update} />
+    </template>
+
+    <template if:true={user.verified} if:compare="1">
+        <h2 class="header">Aguardando verificação</h2>
+        <p>Seu documento foi enviado para análise. Pode levar alguns dias para que nossa equipe verifique a autenticidade do mesmo. Enquanto aguarda você já pode ler livros on-line.</p>
+    </template>
+
+    <template if:true={user.verified} if:compare="2">
+        <h2 class="header">Documento rejeitado</h2>
+        <p>Não conseguimos verificar a autenticidade do seu documento. Talvez a imagem não esteja suficientemente nítida. Solicitamos que emvie uma nova imagem.</p>
+
+        <ecl-file-upload onloadend={update} />
+    </template>
+
+    <template if:true={user.verified} if:compare="4">
+        <h2 class="header">Usuário verificado</h2>
+        <p>Você tem acesso total à biblioteca.</p>
+        <p if:true={user.kid}>Por ter menos de 18 anos, o filtro kids está ligado.</p>
+    </template>
+
+    <h2 class="header">Um pouco sobre você</h2>
+    <div if:true={userContent.text.content} for:each={_paragraphs_} for:item={paragraph}>
+        <p>{paragraph}</p>
+    </div>
+
+        <p if:false={userContent.text.content}>Apresente-se à comunidade: edite o seu perfil e nos conte um pouco sobre você!</p>
+
+    </template>
+
+<h2 class="header">Ferramentas</h2>

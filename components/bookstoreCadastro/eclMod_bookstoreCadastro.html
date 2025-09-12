@@ -6,6 +6,7 @@
 </div> 
 
 <div if:true={step} if:compare="2">
+    <p if:true={fields.minor}>Porque {fields.text.title.Value} não completou 14 anos ainda, precisamos que os campos a seguir sejam preenchidos com os dados de uma pessoa responsável.</p>
     <ecl-formulary name={_formularyName_} fields={fields} onaction={formularyAction} />
 </div>
 
@@ -22,11 +23,19 @@
 </div> 
 
 <div if:true={step} if:compare="6">
-    <ecl-formulary name="bookstoreCadastro_formularyDocument" fields={fields} onaction={actionStep6} />
-</div> 
+<p>Olá {User.title.Value},</p>
+<p><gender m="Bem-vindo" f="Bem-vinda" /> à Biblioteca Virtual da ACIC.</p>
+<p>Embora esta biblioteca seja comunitária, a maior parte dos livros possui restrições de direitos autorais. Para garantir o alinhamento das nossas atividades com a legislação brasileira, precisamos que você envie um laudo médico ou documento de identidade com o CID, comprovando sua condição de deficiência visual.</p>
+<p>Se não puder enviar o documento agora, você poderá fazê-lo mais tarde acessando o seu perfil.</p>
+    <ecl-file-upload title="Enviar documento agora" onloadend={actionStep6} />
+    <ecl-button onclick={actionStep6}>Enviar mais tarde</ecl-button>
+    </div> 
 
 <div if:true={step} if:compare="7">
+    <p>Estamos felizes por ter você em nossa comunidade.</p>
+    <p>Boas leituras!</p>
         <ecl-formulary name="bookstoreCadastro_formularyFinish" onaction={actionStep7} />
 </div> 
 
+<ecl-link url={_urlLevelUp_}>Voltar para a página inicial</ecl-link>
 <ecl-modal message={error.message} context={error.context} name="alert" />

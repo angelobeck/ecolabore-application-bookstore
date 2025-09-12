@@ -1,0 +1,15 @@
+{
+    "flags": {
+        "filter": "filter_string",
+        "name": "mail",
+        "required": true,
+        "target": "details.mail"
+    },
+    "text": {
+        "label": {
+            "pt": {
+                "value": "Email"
+            }
+        }
+    }
+}

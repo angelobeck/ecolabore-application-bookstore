@@ -1,0 +1,19 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Atualizar contatos"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Permite atualizar dados de contato do usuário"
+            }
+        }
+    },
+    "flags": {
+        "module": "bookstorePerfil_personal",
+        "endpoint": "bookstorePerfil_personal",
+        "modList_show": true
+    }
+}

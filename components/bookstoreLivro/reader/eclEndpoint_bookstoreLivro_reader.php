@@ -7,6 +7,13 @@ class eclEndpoint_bookstoreLivro_reader extends eclEndpoint
     {
         global $io, $store;
         $name = $this->page->application->parent->name;
+        $book = $store->bookstore_book->open($name);
+        if (!$book)
+            return $this->response(['content' => 'O livro ' . $name . ' não foi encontrado.']);
+
+        $restrictions = eclEndpoint_bookstoreLivro::bookRestrictions($this->page, $book);
+        if ($restrictions)
+            return $this->response(['content' => $restrictions]);
 
         $location = PATH_ROOT . 'livros/' . $name . '/' . $name . '.txt';
         if (!is_file($location))

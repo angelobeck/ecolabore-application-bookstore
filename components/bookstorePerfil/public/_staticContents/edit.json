@@ -1,0 +1,12 @@
+{
+    "children": [
+        "~editNick",
+        "~editDescription",
+        "~editContent",
+        "~editHideMyFavorites",
+        "~editHideMyRecents"
+    ],
+    "actions": [
+        "~actionSave"
+    ]
+}

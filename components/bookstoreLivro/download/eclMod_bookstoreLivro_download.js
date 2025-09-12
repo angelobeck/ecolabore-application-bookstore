@@ -1,61 +1,59 @@
 
 class eclMod_bookstoreLivro_download extends eclMod {
-    book = '';
-    paragraphs = [];
+    message = '';
+    files = [];
+    nameMonitor = '';
 
     connectedCallback() {
-        this.track('book');
+        this.track('message');
+        this.track('files');
 
         io.request()
-            .then(book => {
-                this.book = book;
-                this.paragraphs = page.selectLanguage(this.book.text.synopsis).value.split("\n");
+            .then(response => {
+                if (response.message)
+                    this.message = response.message;
+                if (response.files)
+                    this.files = response.files;
             })
             .catch(error => {
-                this.book = error;
+                this.message = error;
             });
     }
 
-    get _urlAuthor_() {
-        return page.url([page.domain.name, 'livros', '-autores', this.book.author_name]);
+    get _files_() {
+        if (!Array.isArray(this.files))
+            return [];
+
+        return this.files.map(file => {
+            var url = page.url([...page.application.path, file.name]);
+            return {
+                name: file.name,
+                size: ' ' + this.roundBytes(file.size),
+                url: url
+            };
+        });
     }
 
-    get _urlNarrator_() {
-        return page.url([page.domain.name, 'livros', '-narradores', this.book.narrator_name]);
-    }
+    roundBytes(size) {
+        if (size < 1024)
+            return size + 'B';
 
-    get _urlGenre_() {
-        return page.url([page.domain.name, 'livros', '-generos', this.book.genre_name]);
-    }
+        size /= 1024;
+        if (size < 10)
+            return (Math.ceil(size * 10) / 10) + 'KB';
+        if (size < 1024)
+            return Math.ceil(size) + 'KB';
 
-    get _keywords_() {
-        var keywords = page.selectLanguage(this.book.text.keywords).value.split(' ');
-        var keysList = [];
-        for (let i = 0; i < keywords.length; i++) {
-            let key = keywords[i];
-            key = key.trim();
-            if (key.substring(key.length - 1) === ',')
-                key = key.substring(0, key.length - 1);
-            if (key.length) {
-                keysList.push({
-                    label: key,
-                    url: page.url([page.domain.name, 'livros'], true, '_keywords-' + key)
-                })
-            }
-        }
-        return keysList;
-    }
+        size /= 1024;
+        if (size < 10)
+            return (Math.ceil(size * 10) / 10) + 'MB';
+        if (size < 1024)
+            return Math.ceil(size) + 'MB';
 
-    get _urlAudiobook_() {
-        return page.url([...page.application.path, 'audiobook']);
-    }
-
-    get _urlReader_() {
-        return page.url([...page.application.path, 'reader']);
-    }
-
-    get _urlDownload_() {
-        return page.url([...page.application.path, 'download']);
+        size /= 1024;
+        if (size < 100)
+            return (Math.ceil(size * 10) / 10) + 'GB';
+        return Math.ceil(size) + 'GB';
     }
 
 }

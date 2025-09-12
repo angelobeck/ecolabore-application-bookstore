@@ -1,0 +1,8 @@
+<div for:each={_children_} for:item={child}>
+    <div>
+        <ecl-link url={child.url}>{child.title.Value}</ecl-link>
+        <div>{child.description.Value}</div>
+    </div>
+</div>
+
+<p if:true={showEmptyMessage}>Não há usuários aguardando verificação.</p>

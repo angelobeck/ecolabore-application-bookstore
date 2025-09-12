@@ -1,0 +1,19 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Todos os leitores"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Lista todos os leitores cadastrados"
+            }
+        }
+    },
+    "flags": {
+        "modList_show": true,
+        "module": "bookstoreComunidade_usuariosTodos",
+        "endpoint": "bookstoreComunidade_usuariosTodos"
+    }
+}

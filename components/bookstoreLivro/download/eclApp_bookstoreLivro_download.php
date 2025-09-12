@@ -3,6 +3,7 @@
 class eclApp_bookstoreLivro_download extends eclApp
 {
     public static $name = 'download';
+    public static $map = ['bookstoreLivro_downloadFile'];
     public static $content = 'bookstoreLivro_download_main';
 
     public static function dispatch(eclEngine_page $page): void

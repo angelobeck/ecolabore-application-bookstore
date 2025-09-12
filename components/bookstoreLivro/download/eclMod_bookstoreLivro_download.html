@@ -1,1 +1,7 @@
-<p>Atualmente os downloads não estão disponíveis. Aguarde o lançamento oficial da Biblioteca Virtual.</p>
+<p if:true={message}>{message}</p>
+
+<div for:each={_files_} for:item={file}>
+    <div>
+        <a class="link" download href={file.url}>{file.name}</a> {file.size}
+    </div>
+</div>

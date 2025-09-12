@@ -1,0 +1,14 @@
+{
+    "flags": {
+        "filter": "filter_string",
+        "name": "user_description",
+        "target": "text.description.pt.value"
+    },
+    "text": {
+        "label": {
+            "pt": {
+                "value": "Mensagem"
+            }
+        }
+    }
+}

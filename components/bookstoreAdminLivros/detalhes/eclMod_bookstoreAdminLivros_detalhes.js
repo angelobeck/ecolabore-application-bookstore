@@ -1,16 +1,26 @@
 
 class eclMod_bookstoreAdminLivros_detalhes extends eclMod {
-        book = '';
+    book = '';
+    files = [];
     paragraphs = [];
+    nameMonitor = '';
 
     connectedCallback() {
         this.track('book');
     }
 
     refreshCallback() {
+        if(this.nameMonitor !== page.application.name) {
+            this.nameMonitor = page.application.name;
+            this.update();
+        }
+    }
+
+    update() {
         io.request()
-            .then(book => {
-                this.book = book;
+            .then(response => {
+                this.book = response.book;
+                this.files = response.files;
                 this.paragraphs = page.selectLanguage(this.book.text.synopsis).value.split("\n");
             })
             .catch(error => {
@@ -60,6 +70,21 @@ class eclMod_bookstoreAdminLivros_detalhes extends eclMod {
 
     get _urlDownload_() {
         return page.url([...page.application.path, 'download']);
+    }
+
+    get _files_() {
+        if (!Array.isArray(this.files))
+            return [];
+
+        return this.files.map(file => {
+            return {
+                name: file
+            };
+        });
+    }
+
+    actionLoadEnd() {
+this.update();
     }
 
 }

@@ -1,0 +1,9 @@
+{
+    "children": [
+        "~editMail",
+        "~editPhone",
+    ],
+    "actions": [
+        "~actionSave"
+    ]
+}

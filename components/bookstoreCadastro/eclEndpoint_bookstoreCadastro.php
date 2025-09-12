@@ -28,16 +28,26 @@ class eclEndpoint_bookstoreCadastro extends eclEndpoint
 
                 $userId = $store->user->insert($user);
 
-                $data['name'] = '-personal';
-                $data['mode'] = 'register';
-                $data['encrypt'] = true;
-                $store->userContent->insert($userId, $data);
+                $userPersonal = $data;
+                ;
+                $userPersonal['name'] = '-personal';
+                $userPersonal['mode'] = 'register';
+                $userPersonal['encrypt'] = true;
+
+                $store->userContent->insert($userId, $userPersonal);
 
                 $userPublic = [
                     'name' => '-public',
                     'mode' => 'register',
                     'text' => ['title' => $data['text']['nick']]
                 ];
+
+                $keywords = $userPersonal['text']['title']['pt']['value'] ?? '';
+                $keywords .= ' ' . $userPublic['text']['title']['pt']['value'] ?? '';
+                $keywords .= ' ' . $user['name'];
+
+                $userPublic['keywords'] = eclIo_database::filterKeywords($keywords);
+
                 $store->userContent->insert($userId, $userPublic);
 
                 $createdSession = &$store->session->create();
@@ -45,8 +55,8 @@ class eclEndpoint_bookstoreCadastro extends eclEndpoint
 
                 $groups = [];
                 $session = [];
-                if (isset($user['kid']) and $user['kid'] > TIME)
-                    $groups['-kids'] = 1;
+        if (!isset($user['kid']) or $user['kid'] < TIME)
+            $groups['adult'] = 4;
 
                 $session['name'] = $user['name'];
                 $session['text'] = ['title' => $userPublic['text']['title']];

@@ -1,0 +1,17 @@
+{
+    "flags": {
+        "filter": "filter_checkbox",
+        "name": "hide_my_recents",
+        "target": "details.recent_books_hide",
+        "trueValue": true,
+        "falseValue": false,
+        "invert": true
+            },
+    "text": {
+        "label": {
+            "pt": {
+                "value": "Exibir minhas leituras recentes a outros membros da comunidade."
+            }
+        }
+    }
+}

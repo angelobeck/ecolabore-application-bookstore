@@ -7,6 +7,7 @@
     <p if:true={book.details.pages}>Número de páginas: {book.details.pages}</p>
     <p if:true={book.details.language}>Idioma: {book.details.language}</p>
     <p if:true={book.format_audio}>Narrado por: <ecl-link url={_urlNarrator_} label={book.text.narrator} /></p>
+    <p if:true={book.collection_name}>Série: <ecl-link url={_urlCollection_}>{book.text.collection.pt.value}</ecl-link><span if:true={book.details.index}> - {book.details.index}</span></p>
     <p>Gênero: <ecl-link url={_urlGenre_} label={book.text.genre.Value} /></p>
     <p if:true={book.text.keywords}>
         Palavras-chave:
@@ -22,5 +23,21 @@
     <h2 class="header">Disponibilidade</h2>
     <div if:true={book.format_ink}>Temos este livro em tinta. Consulte a disponibilidade para empréstimo na Biblioteca da ACIC</div>
     <div if:true={book.format_braille}>Temos este livro em braille, em {book.details.braille} volumes. Consulte a disponibilidade para empréstimo na Biblioteca da ACIC</div>
+    <div if:true={_showProtectedMessage_}>Este livro está protegido por direitos autorais. Você precisa estar conectado para ter acesso ao seu conteúdo.</div>
+    <div if:true={_showAdultMessage_}>Este livro possui conteúdo adulto. Somente leitores cadastrados com mais de 18 anos podem ter acesso ao seu conteúdo.</div>
     <div if:true={_readerEnabled_}><ecl-link url={_urlReader_}>Leia o livro on-line</ecl-link></div>
+    <div if:true={_downloadEnabled_}><ecl-link url={_urlDownload_}>Baixe o livro para ler no seu aplicativo favorito.</ecl-link></div>
+
+    <template if:true={_showFavoriteButton_}>
+<h2 class="header">Eu e o livro</h2>
+<ecl-button onclick={actionFavorite}>{_buttonFavoriteLabel_}</ecl-button>
+    </template>
+    
+    <template if:true={_readers_}>
+        <h2 class="header">Visitas recentes</h2>
+        <div for:each={_readers_} for:item={reader}>
+            {reader.separator}
+            <ecl-link url={reader.url}>{reader.title}</ecl-link>
+        </div>
+    </template>
 </template>

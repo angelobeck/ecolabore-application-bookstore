@@ -1,0 +1,15 @@
+{
+    "flags": {
+        "filter": "filter_string",
+        "name": "user_name",
+        "required": true,
+        "target": "text.title.pt.value"
+    },
+    "text": {
+        "label": {
+            "pt": {
+                "value": "Nome ou apelido"
+            }
+        }
+    }
+}

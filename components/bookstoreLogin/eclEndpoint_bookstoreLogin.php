@@ -18,7 +18,7 @@ class eclEndpoint_bookstoreLogin extends eclEndpoint
                     'name' => ADMIN_NAME,
                     'text' => ['title' => ADMIN_TITLE],
                     'details' => ['gender' => ADMIN_GENDER],
-                    'groups' => ['-root' => 4],
+                    'groups' => ['-root' => 4, '-adult' => 4, '-verified' => 4],
                     'sessionId' => $createdSession['name'],
                     'sessionKey' => $createdSession['key']
                 ]
@@ -27,14 +27,13 @@ class eclEndpoint_bookstoreLogin extends eclEndpoint
 
         $user = self::findUser($input);
         if (!$user)
-            return $this->error('');
+            return $this->error();
         if (isset($user['blocked']) && $user['blocked'])
-            return $this->error('');
+            return $this->error();
         if (!password_verify($input['password'], $user['password']))
-            return $this->error('');
+            return $this->error();
 
         $data = [];
-        $grups = [];
 
         $userContent = $store->userContent->open($user['id'], '-public');
         if ($userContent) {
@@ -42,19 +41,24 @@ class eclEndpoint_bookstoreLogin extends eclEndpoint
         } else {
             $userContent = $store->userContent->open($user['id'], '-personal');
             if (!$userContent)
-                return $this->error('');
+                return $this->error();
 
             $data['text'] = $userContent['text'];
         }
 
-
         $createdSession = &$store->session->create();
-        $createdSession['session']['user'] = ['name' => $user['name']];
+        $createdSession['session']['user'] = [
+            'name' => $user['name'],
+            'kid' => $user['kid'],
+            'verified' => $user['verified']
+        ];
 
-        if (isset($user['kid']) and $user['kid'] < TIME)
-            $groups['-kids'] = 1;
-        if (isset($user['verified']) and $user['verified'])
-            $groups['-verified'] = 1;
+        $groups = [];
+        if (isset($user) and $user['verified'] == 4)
+            $groups['-verified'] = 4;
+        if (!isset($user['kid']) or $user['kid'] < TIME)
+            $groups['adult'] = 4;
+
         foreach (explode(',', ADMIN_HELPERS) as $helperName) {
             $helperName = trim($helperName);
             if ($user['name'] === $helperName) {

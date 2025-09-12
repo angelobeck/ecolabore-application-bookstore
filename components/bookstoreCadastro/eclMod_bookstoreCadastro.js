@@ -84,30 +84,14 @@ class eclMod_bookstoreCadastro extends eclMod {
     }
 
     actionStep6(event) {
-        var action = event.detail.action;
-        var formulary = event.detail.formulary;
-
-        if (action === 'skip') {
             this.step++;
-        } else {
-            const data = {
-                step: this.step,
-                fields: []
-            };
-            io.request(data)
-                .then(response => {
-                    this.step++;
-                })
-                .catch((error, raw) => {
-                    this.raw = raw;
-                    this.error = error;
-                    page.alertOpen('alert');
-                });
-        }
     }
 
     actionStep7() {
         navigate(page.url(page.application.parent.path));
     }
 
+    get _urlLevelUp_(){
+        return page.url([page.domain.name]);
+    }
 }

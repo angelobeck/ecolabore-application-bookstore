@@ -1,14 +1,28 @@
 
 class eclMod_bookstorePerfil extends eclMod {
-    response = {};
-    
-    connectedCallback() {
-        this.track('response');
+    user = {};
+    userContent = {};
 
+    connectedCallback() {
+        this.track('user');
+        this.update();
+    }
+
+    update() {
         io.request()
             .then((response) => {
-                this.response = response;
+                this.user = response.user;
+                this.userContent = response.userContent;
             });
+    }
+
+    get _paragraphs_() {
+        var paragraphs = [];
+        this.userContent.text.content.pt.value.split("\n").map(line => {
+            if (line != '')
+                paragraphs.push(line);
+        });
+        return paragraphs;
     }
 
 }

@@ -1,0 +1,17 @@
+{
+    "flags": {
+        "filter": "filter_checkbox",
+        "name": "hide_my_favorites",
+        "target": "details.favorite_books_hide",
+        "trueValue": true,
+        "falseValue": false,
+        "invert": true
+            },
+    "text": {
+        "label": {
+            "pt": {
+                "value": "Exibir meus favoritos a outros membros da comunidade."
+            }
+        }
+    }
+}

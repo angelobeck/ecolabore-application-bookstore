@@ -1,0 +1,16 @@
+<template if:true={userContent}>
+    <p>Nome: {userContent.text.title.Value}</p>
+    <p>Data de nascimento: {userContent.details.bornDate}</p>
+    <p>País: {userContent.details.country}</p>
+    <p if:true={user.kid}>Responsável: {userContent.text.sponsor.Value}</p>
+    <p>Email: {userContent.details.mail}</p>
+    <p>Telefone: {userContent.details.phone}</p>
+    <p>Documento: {userContent.details.document}</p>
+
+    <div>
+    <img style="width:100%; height:auto" src={_urlDocument_} alt="Visualização do documento" />
+    </div>
+    
+    <ecl-button onclick={actionAccept}>Aprovar</ecl-button>
+    <ecl-button onclick={actionReject}>Rejeitar</ecl-button>
+    </template>

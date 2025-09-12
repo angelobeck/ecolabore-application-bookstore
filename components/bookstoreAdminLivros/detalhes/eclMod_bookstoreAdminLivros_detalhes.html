@@ -15,6 +15,9 @@
             <ecl-link url={keyword.url} label={keyword.label} />
         </template>
     </p>
+    <p if:true={book.kid}>Conteúdo infantojuvenil</p>
+    <p if:true={book.adult}>Conteúdo adulto</p>
+    <p if:true={book.public}>Domínio público</p>
     <h2 class="header">Sinopse</h2>
     <template for:each={paragraphs} for:item={paragraph}>
         <p>{paragraph}</p>
@@ -23,4 +26,10 @@
     <div if:true={book.format_ink}>Temos este livro em tinta. Consulte a disponibilidade para empréstimo na Biblioteca da ACIC</div>
     <div if:true={book.format_braille}>Temos este livro em braille, em {book.details.braille} volumes. Consulte a disponibilidade para empréstimo na Biblioteca da ACIC</div>
     <div if:true={book.format_digital}><ecl-link url={_urlReader_}>Leia o livro on-line</ecl-link></div>
+<h2 class="header">Arquivos</h2>
+<div for:each={_files_} for:item={file}>
+    <div>{file.name}</div>
+</div>
+<ecl-file-upload onloadend={actionLoadEnd} />
+<h2 class="header">Ferramentas</h2>
 </template>

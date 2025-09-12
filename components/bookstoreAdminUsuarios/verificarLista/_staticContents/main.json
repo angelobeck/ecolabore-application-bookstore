@@ -1,0 +1,19 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Aguardando verificação"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Lista todos os usuários que aguardam verificação do laudo médico"
+            }
+        }
+    },
+    "flags": {
+        "modList_show": true,
+        "module": "bookstoreAdminUsuarios_verificarLista",
+        "endpoint": "bookstoreAdminUsuarios_verificarLista"
+    }
+}

@@ -1,4 +1,7 @@
-<p>Seja bem-vindo(a) ao pré lançamento da nossa biblioteca virtual.</p>
-<p>Enquanto aguardamos ansiosamente pelo lançamento oficial, você já pode sentir um gostinho do que será nosso espaço de leituras e trocas.</p>
-<p>Acesse <ecl-link url={url}>Todos os livros em domínio público</ecl-link> para começar ler alguns livros on-line.</p>
-<p>Na nossa página de pesquisa você também poderá consultar livros em tinta e livros em braille disponíveis para empréstimo na biblioteca da ACIC.</p>
+<h2 class="header">Biblioteca Virtual da ACIC</h2>
+
+<mod name="user" />
+
+<p if:false={User.name}>Acesse <ecl-link url={url}>Todos os livros em domínio público</ecl-link> para começar ler alguns livros on-line.</p>
+<p if:false={User.name}>Na nossa página de pesquisa você também poderá consultar livros em tinta e livros em braille disponíveis para empréstimo na biblioteca da ACIC.</p>
+

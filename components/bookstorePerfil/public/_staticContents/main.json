@@ -1,0 +1,19 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Editar perfil"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Permite a edição do perfil público."
+            }
+        }
+    },
+    "flags": {
+        "module": "bookstorePerfil_public",
+        "endpoint": "bookstorePerfil_public",
+        "modList_show": true
+    }
+}
