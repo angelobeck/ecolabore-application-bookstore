@@ -3,14 +3,14 @@
     <label>
         <p>Informe seu CPF, telefone ou email</p>
         <div>
-            <input type="text" wire:element={identifierElement} onkeydown={handleIdentifierKeydown} />
+            <input class="field_text_input" type="text" wire:element={identifierElement} onkeydown={handleIdentifierKeydown} />
         </div>
     </label>
-    <button onclick={handleIdentifierAction}>
+    <button class="general_button" onclick={handleIdentifierAction}>
         Próxima
     </button>
-    <div>
-        <ecl-link url={levelUpUrl}>
+    <div style="margin-top: 1rem">
+        <ecl-link url={levelUpUrl} >
             Voltar para {levelUpTitle.Value}
         </ecl-link>
     </div>
@@ -21,7 +21,7 @@
     <label>
         <p>Senha</p>
         <div>
-            <input type={passwordType} wire:element={passwordElement} readonly={passwordReadonly}
+            <input class="field_text_input" type={passwordType} wire:element={passwordElement} readonly={passwordReadonly}
                 onkeydown={handlePasswordKeydown} />
         </div>
     </label>
@@ -31,7 +31,7 @@
             Exibir senha
         </label>
     </div>
-    <button onclick={handlePasswordAction} aria-disabled={passwordReadonly}>
+    <button class="general_button" onclick={handlePasswordAction} aria-disabled={passwordReadonly}>
         Conectar
     </button>
     <div>
@@ -52,10 +52,10 @@
 <template if:true={step} if:compare="error">
     <h1 class="header" wire:element={errorElement} tabindex="0">Ooops!</h1>
     <p>{errorMessage}</p>
-    <button onclick={handleErrorRetry}>
+    <button class="general_button" onclick={handleErrorRetry}>
         Tentar novamente
     </button>
-    <button onclick={handleErrorCancel}>
+    <button class="general_button" class="general_button" onclick={handleErrorCancel}>
         Cancelar
     </button>
 </template>

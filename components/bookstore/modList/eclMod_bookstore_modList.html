@@ -2,10 +2,10 @@
     for:each={_children_} 
     for:item={child} 
     if:true={_showModule_}
-    style="display:flex; width:100%; height:4em; "
+    class="nav_list_search"
 >
     <ecl-link url={child.url} style="flex-basis:0; flex-grow:1;  display:flex; ">
-        <span style="margin:auto; ">
+        <span style="margin:auto; " class="nav_list_search_item">
             {child.title.Value}
         </span>
     </ecl-link>

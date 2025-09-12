@@ -1,6 +1,7 @@
 <div for:each={_children_} for:item={child}>
     <div>
-        <a href={child.url}>{child.title.Value}</a>
+        <ecl-link url={child.url}>{child.title.Value}</ecl-link>
+        <!-- <a href={child.url}>{child.title.Value}</a> -->
         <div>{child.description.Value}</div>
     </div>
 </div>
