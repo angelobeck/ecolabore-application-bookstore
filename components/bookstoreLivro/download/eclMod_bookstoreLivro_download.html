@@ -1,7 +1,7 @@
 <p if:true={message}>{message}</p>
 
-<div for:each={_files_} for:item={file}>
-    <div>
+<ul class="list-vertical" for:each={_files_} for:item={file}>
+    <li>
         <a class="link" download href={file.url}>{file.name}</a> {file.size}
-    </div>
-</div>
+    </li>
+</ul>

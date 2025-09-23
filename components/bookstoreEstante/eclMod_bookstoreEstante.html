@@ -3,20 +3,20 @@
 <template if:true={user}>
     <template if:true={_favorites_}>
         <h2 class="header">Meus favoritos</h2>
-        <div for:each={_favorites_} for:item={favorite}>
-            <div>
+        <ul class="list-vertical" for:each={_favorites_} for:item={favorite}>
+            <li>
                 <ecl-link url={favorite.url}>{favorite.title}</ecl-link>
-            </div>
-        </div>
+            </li>
+        </ul>
     </template>
 
     <template if:true={_recents_}>
         <h2 class="header">Visitas recentes</h2>
-        <div for:each={_recents_} for:item={recent}>
-            <div>
+        <ul class="list-vertical" for:each={_recents_} for:item={recent}>
+            <li>
                 <ecl-link url={recent.url}>{recent.title}</ecl-link>
-            </div>
-        </div>
+            </li>
+        </ul>
     </template>
 
 </template>

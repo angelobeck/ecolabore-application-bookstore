@@ -1,7 +1,7 @@
 <h2 class="header">{narrator.text.title.Value}</h2>
-<div for:each={_children_} for:item={child}>
-    <div>
-        <ecl-link url={child.url}>{child.title.Value}</ecl-link>
-        <div>{child.description.Value}</div>
-    </div>
-</div>
+<ecl-text content={narrator.text.content} />
+<ul class="list-vertical" for:each={_children_} for:item={child}>
+    <li>
+        <ecl-link url={child.url}>{child.title.Value} - {child.author.Value}</ecl-link>
+    </li>
+</ul>

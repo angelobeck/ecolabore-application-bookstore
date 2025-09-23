@@ -10,7 +10,7 @@ class eclMod_bookstoreLivros extends eclMod {
         this.track('status');
     }
 
-    handleClick() {
+    handleButtonClick() {
         this.status = 'Pesquisando...';
         this.response = [];
         var keywords = this.filterKeywords.value;
@@ -37,6 +37,20 @@ class eclMod_bookstoreLivros extends eclMod {
             });
     }
 
+    handleButtonKeydown(event) {
+        if(event.altKey || event.ctrlKey || event.metaKey || event.shiftKey)
+            return;
+        if(event.key == ' ' || event.key == 'Enter')
+            this.handleButtonClick();
+    }
+
+        handleInputKeydown(event) {
+        if(event.altKey || event.ctrlKey || event.metaKey || event.shiftKey)
+            return;
+        if(event.key == 'Enter')
+            this.handleButtonClick();
+    }
+
     renderedCallback() {
         if (page.actions.keywords && page.actions.keywords.length > 1) {
             this.filterKeywords.value = page.actions.keywords[1].replace(/[+]/g, ' ');
@@ -54,6 +68,7 @@ class eclMod_bookstoreLivros extends eclMod {
         return this.response.map(child => {
             return {
                 title: child.text.title,
+                author: child.text.author,
                 url: page.url([...basePath, child.name])
             }
         });

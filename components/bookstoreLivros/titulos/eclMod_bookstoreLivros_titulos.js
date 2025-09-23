@@ -20,7 +20,7 @@ class eclMod_bookstoreLivros_titulos extends eclMod {
 
             children.push({
                 title: child.text.title,
-                description: child.text.description || {},
+                author: child.text.author || {},
                 url: page.url([...basePath, child.name])
             });
         }

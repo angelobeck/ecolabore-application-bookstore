@@ -1,0 +1,11 @@
+<template if:true={register}>
+    <p>Nome: {register.text.title.Value}</p>
+    <ecl-text content={register.text.content} />
+    <h2 class="header">Livros relacionados</h2>
+        <ul for:each={_books_} for:item={book}>
+        <li><ecl-link url={book.url}>{book.title.Value}</ecl-link></li>
+        </ul>
+        <p if:false={_booksExists_}>Não há livros relacionados</p>
+</template>
+
+        <h2 class="header">Ferramentas</h2>

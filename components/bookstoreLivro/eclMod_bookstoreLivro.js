@@ -2,7 +2,6 @@
 class eclMod_bookstoreLivro extends eclMod {
     book = '';
     files = [];
-    paragraphs = [];
     isFavorite = false;
 
     connectedCallback() {
@@ -13,7 +12,6 @@ class eclMod_bookstoreLivro extends eclMod {
                 this.book = response.book;
                 this.files = response.files;
                 this.isFavorite = response.is_favorite;
-                this.paragraphs = page.selectLanguage(this.book.text.synopsis).value.split("\n");
             })
             .catch(error => {
                 this.book = error;
@@ -122,6 +120,8 @@ class eclMod_bookstoreLivro extends eclMod {
 
     get _readers_() {
         if (this.book.adult)
+            return [];
+        if(!Array.isArray(this.book.details.readers))
             return [];
         return this.book.details.readers.map((reader, index) => {
             var path = [page.application.path[0], 'comunidade', reader.id];

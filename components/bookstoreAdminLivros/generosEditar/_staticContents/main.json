@@ -1,0 +1,19 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Editar registro"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Permite editar o registro do livro catalogado."
+            }
+        }
+    },
+    "flags": {
+        "modList_show": true,
+        "module": "bookstoreAdminLivros_generosEditar",
+        "endpoint": "bookstoreAdminLivros_generosEditar"
+    }
+}

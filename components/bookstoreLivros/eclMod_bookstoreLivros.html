@@ -1,8 +1,8 @@
 <label>
     Sua pesquisa
-    <input type="text" class="field_text_input" wire:element={filterKeywords} />
+    <input type="text" class="field_text_input" wire:element={filterKeywords} onkeydown={handleInputKeydown} />
 </label>
-<button onclick={handleClick} class="general_button">
+<button onclick={handleButtonClick} onkeydown={handleButtonKeydown} class="general_button">
     Pesquisar
 </button>
 
@@ -10,10 +10,10 @@
 
 <p aria-live="polite">{status}</p>
 
-<div for:each={_children_} for:item={child}>
-    <div>
-        <ecl-link url={child.url}>{child.title.Value}</ecl-link>
-    </div>
-</div>
+<ul class="list-vertical" for:each={_children_} for:item={child}>
+    <li>
+        <ecl-link url={child.url}>{child.title.Value} - {child.author.Value}</ecl-link>
+    </li>
+</ul>
 
 <h2>Explorar a biblioteca</h2>

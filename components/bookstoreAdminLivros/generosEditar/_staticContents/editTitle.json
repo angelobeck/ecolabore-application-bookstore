@@ -1,0 +1,15 @@
+{
+    "flags": {
+        "filter": "filter_string",
+        "name": "title",
+        "target": "text.title.pt.value",
+        "required": true
+    },
+    "text": {
+        "label": {
+            "pt": {
+                "value": "Nome"
+            }
+        }
+    }
+}

@@ -13,8 +13,17 @@ class eclEndpoint_bookstoreAdminLivros_detalhes extends eclEndpoint
             return $error;
 
         $files = [];
-        $location = PATH_ROOT . 'livros/' . $name;
+        $location = PATH_ROOT . 'livros/' . $name . '/';
         if (is_dir($location)) {
+            if (
+                isset($input['action'])
+                and $input['action'] == 'remove_file'
+                and isset($input['filename'])
+                and preg_match('/^[a-zA-Z0-9_-]+[.][a-z0-9]+$/', $input['filename'])
+                and is_file($location . $input['filename'])
+            )
+                unlink($location . $input['filename']);
+
             foreach (scandir($location) as $fileName) {
                 if ($fileName[0] != '.')
                     $files[] = $fileName;

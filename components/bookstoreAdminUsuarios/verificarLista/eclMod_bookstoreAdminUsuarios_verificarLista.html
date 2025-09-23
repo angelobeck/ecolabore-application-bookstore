@@ -1,8 +1,8 @@
-<div for:each={_children_} for:item={child}>
-    <div>
+<ul class="list-vertical" for:each={_children_} for:item={child}>
+    <ul>
         <ecl-link url={child.url}>{child.title.Value}</ecl-link>
         <div>{child.description.Value}</div>
-    </div>
-</div>
+    </li>
+</ul>
 
 <p if:true={showEmptyMessage}>Não há usuários aguardando verificação.</p>

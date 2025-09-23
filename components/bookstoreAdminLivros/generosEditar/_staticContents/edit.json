@@ -1,0 +1,9 @@
+{
+    "children": [
+        "~editTitle",
+        "~editContent"
+    ],
+    "actions": [
+        "~actionSave"
+    ]
+}

@@ -10,7 +10,7 @@ class eclMod_bookstoreAdminLivros_detalhes extends eclMod {
     }
 
     refreshCallback() {
-        if(this.nameMonitor !== page.application.name) {
+        if (this.nameMonitor !== page.application.name) {
             this.nameMonitor = page.application.name;
             this.update();
         }
@@ -29,15 +29,15 @@ class eclMod_bookstoreAdminLivros_detalhes extends eclMod {
     }
 
     get _urlAuthor_() {
-        return page.url([page.domain.name, 'livros', '-autores', this.book.author_name]);
+        return page.url([page.domain.name, 'admin', 'livros', '-autores', this.book.author_name]);
     }
 
     get _urlNarrator_() {
-        return page.url([page.domain.name, 'livros', '-narradores', this.book.narrator_name]);
+        return page.url([page.domain.name, 'admin', 'livros', '-narradores', this.book.narrator_name]);
     }
 
     get _urlGenre_() {
-        return page.url([page.domain.name, 'livros', '-generos', this.book.genre_name]);
+        return page.url([page.domain.name, 'admin', 'livros', '-generos', this.book.genre_name]);
     }
 
     get _keywords_() {
@@ -53,23 +53,11 @@ class eclMod_bookstoreAdminLivros_detalhes extends eclMod {
                 keysList.push({
                     label: key,
                     separator: keysList.length ? ', ' : '',
-                    url: page.url([page.domain.name, 'livros'], true, '_keywords-' + slug)
+                    url: page.url([page.domain.name, 'admin', 'livros'], true, '_keywords-' + slug)
                 })
             }
         }
         return keysList;
-    }
-
-    get _urlAudiobook_() {
-        return page.url([...page.application.path, 'audiobook']);
-    }
-
-    get _urlReader_() {
-        return page.url([...page.application.path, 'reader']);
-    }
-
-    get _urlDownload_() {
-        return page.url([...page.application.path, 'download']);
     }
 
     get _files_() {
@@ -84,7 +72,20 @@ class eclMod_bookstoreAdminLivros_detalhes extends eclMod {
     }
 
     actionLoadEnd() {
-this.update();
+        this.update();
     }
 
+    actionRemoveFile(event) {
+        var fileName = event.detail.value;
+
+        io.request({
+            action: 'remove_file',
+            filename: fileName
+        })
+            .then(response => {
+                this.book = response.book;
+                this.files = response.files;
+                this.paragraphs = page.selectLanguage(this.book.text.synopsis).value.split("\n");
+            });
+    }
 }

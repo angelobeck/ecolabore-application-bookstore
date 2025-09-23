@@ -1,12 +1,12 @@
-<nav 
+<ul 
     for:each={_children_} 
     for:item={child} 
     if:true={_showModule_}
-    class="nav_list_search"
+    class="list-vertical"
 >
-    <ecl-link url={child.url} style="flex-basis:0; flex-grow:1;  display:flex; ">
-        <span style="margin:auto; " class="nav_list_search_item">
+    <li>
+        <ecl-link url={child.url} style="flex-basis:0; flex-grow:1;  display:flex; ">
             {child.title.Value}
-        </span>
-    </ecl-link>
-</nav>
+        </ecl-link>
+    </li>
+</ul>

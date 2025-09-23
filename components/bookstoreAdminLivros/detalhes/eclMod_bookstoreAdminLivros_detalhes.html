@@ -28,7 +28,10 @@
     <div if:true={book.format_digital}><ecl-link url={_urlReader_}>Leia o livro on-line</ecl-link></div>
 <h2 class="header">Arquivos</h2>
 <div for:each={_files_} for:item={file}>
-    <div>{file.name}</div>
+    <div>
+        {file.name}
+        <ecl-button value={file.name} onclick={actionRemoveFile}>Remover {file.name}</ecl-button>
+    </div>
 </div>
 <ecl-file-upload onloadend={actionLoadEnd} />
 <h2 class="header">Ferramentas</h2>
