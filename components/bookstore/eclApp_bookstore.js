@@ -1,8 +1,11 @@
 
 class eclApp_bookstore extends eclApp {
     static name = 'bookstore';
-    static map = ['bookstoreHome', 'bookstoreLivros', 'bookstoreEstante', 'bookstoreComunidade', 'bookstoreAdmin', 'bookstoreCadastro', 'bookstoreLogin', 'bookstoreLogin_accessDenied', 'bookstoreLogin_invalidSession', 'bookstoreSobre', 'bookstoreNotFound'];
     static content = 'bookstore_main';
+
+        static constructorHelper(me) {
+        me.map =[...getMap('bookstore'), 'bookstoreHome', 'bookstoreLivros', 'bookstoreEstante', 'bookstoreComunidade', 'bookstoreAdmin', 'bookstoreCadastro', 'bookstoreLogin', 'bookstoreLogin_accessDenied', 'bookstoreLogin_invalidSession', 'bookstoreSobre', 'bookstoreNotFound'];
+    }
 
     static dispatch(page) {
         page.modules.dialog = 'bookstore_modDialog_main';

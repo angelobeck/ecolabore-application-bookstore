@@ -1,0 +1,11 @@
+{
+    "children": [
+        "~editName",
+        "~editParentName",
+        "~editTitle",
+        "~editContent"
+    ],
+    "actions": [
+        "~actionSave"
+    ]
+}

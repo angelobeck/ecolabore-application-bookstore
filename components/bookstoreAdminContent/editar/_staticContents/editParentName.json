@@ -1,0 +1,14 @@
+{
+    "flags": {
+        "filter": "filter_string",
+        "name": "parent_name",
+        "target": "parent_name"
+    },
+    "text": {
+        "label": {
+            "pt": {
+                "value": "parent_name"
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Nova página"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Cria uma nova página de conteúdo"
+            }
+        }
+    },
+    "flags": {
+        "modList_show": true,
+        "module": "bookstoreAdminContent_cadastrar",
+        "endpoint": "bookstoreAdminContent_cadastrar"
+    }
+}

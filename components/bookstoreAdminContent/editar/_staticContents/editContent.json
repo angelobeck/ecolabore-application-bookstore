@@ -1,0 +1,15 @@
+{
+    "flags": {
+        "filter": "filter_string",
+        "display": "textarea",
+        "name": "content",
+        "target": "text.content.pt.value"
+                    },
+    "text": {
+        "label": {
+            "pt": {
+                "value": "Conteúdo"
+            }
+        }
+    }
+}

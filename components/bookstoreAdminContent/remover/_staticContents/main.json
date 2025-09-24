@@ -1,0 +1,19 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Remover página"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Remove a página"
+            }
+        }
+    },
+    "flags": {
+        "modList_show": true,
+        "module": "bookstoreAdminContent_remover",
+        "endpoint": "bookstoreAdminContent_remover"
+    }
+}

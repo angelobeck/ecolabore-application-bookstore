@@ -5,3 +5,8 @@
 <p if:false={User.name}>Acesse <ecl-link url={url}>Todos os livros em domínio público</ecl-link> para começar ler alguns livros on-line.</p>
 <p if:false={User.name}>Na nossa página de pesquisa você também poderá consultar livros em tinta e livros em braille disponíveis para empréstimo em nossa biblioteca física.</p>
 
+<ul class="list-vertical" for:each={_sections_} for:item={section}>
+    <li>
+        <ecl-link url={section.url}>{section.title.Value}</ecl-link>
+    </li>
+</ul>

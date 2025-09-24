@@ -1,0 +1,19 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Conteúdos"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Gerencia as páginas de conteúdos"
+            }
+        }
+    },
+    "flags": {
+        "module": "bookstoreAdminContent",
+        "endpoint": "bookstoreAdminContent",
+        "modList_show": true
+    }
+}

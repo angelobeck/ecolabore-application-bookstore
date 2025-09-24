@@ -1,0 +1,18 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Detalhes"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Exibe o conteúdo da página"
+            }
+        }
+    },
+    "flags": {
+        "module": "bookstoreAdminContent_detalhes",
+        "endpoint": "bookstoreAdminContent_detalhes"
+    }
+}

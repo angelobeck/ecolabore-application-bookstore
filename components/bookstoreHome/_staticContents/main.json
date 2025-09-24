@@ -18,6 +18,7 @@
     },
     "flags": {
         "modNav_show": true,
-        "module": "bookstoreHome"
+        "module": "bookstoreHome",
+        "endpoint": "bookstoreHome"
     }
 }

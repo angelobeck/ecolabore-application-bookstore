@@ -1,0 +1,19 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Editar página"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Permite editar o conteúdo da página"
+            }
+        }
+    },
+    "flags": {
+        "modList_show": true,
+        "module": "bookstoreAdminContent_editar",
+        "endpoint": "bookstoreAdminContent_editar"
+    }
+}

@@ -10,6 +10,10 @@ class eclApp_bookstoreHome extends eclApp
         $me->path = $me->parent->path;
     }
 
+    public static function dispatch(eclEngine_page $page): void
+    {
+        $page->endpoints->main = 'bookstoreHome_main';
+    }
     public static function view_main(eclEngine_page $page): void
     {
         $page->modules->content = 'bookstoreHome_main';
