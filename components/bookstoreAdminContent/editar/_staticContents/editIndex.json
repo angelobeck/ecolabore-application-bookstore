@@ -1,0 +1,14 @@
+{
+    "flags": {
+        "filter": "filter_string",
+        "name": "index",
+        "target": "index"
+    },
+    "text": {
+        "label": {
+            "pt": {
+                "value": "Posição desta página na lista"
+            }
+        }
+    }
+}

@@ -4,7 +4,7 @@ class eclApp_bookstore extends eclApp {
     static content = 'bookstore_main';
 
         static constructorHelper(me) {
-        me.map =[...getMap('bookstore'), 'bookstoreHome', 'bookstoreLivros', 'bookstoreEstante', 'bookstoreComunidade', 'bookstoreAdmin', 'bookstoreCadastro', 'bookstoreLogin', 'bookstoreLogin_accessDenied', 'bookstoreLogin_invalidSession', 'bookstoreSobre', 'bookstoreNotFound'];
+        me.map =[...getMap('bookstore'), 'bookstoreHome', 'bookstoreLivros', 'bookstoreEstante', 'bookstoreComunidade', 'bookstoreAdmin', 'bookstoreCadastro', 'bookstoreLogin', 'bookstoreLogin_accessDenied', 'bookstoreLogin_invalidSession', 'bookstoreContent', 'bookstoreNotFound'];
     }
 
     static dispatch(page) {

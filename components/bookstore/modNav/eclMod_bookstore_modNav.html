@@ -1,9 +1,17 @@
 <hr />
-<nav for:each={_children_} for:item={item} class="main-bottom-menu">
-        <ecl-link
+<nav>
+    <ul for:each={_children_} for:item={item} class="main-bottom-menu">
+        <li
             aria-current={item.current}
-            label={item.label}
-            url={item.url} 
             class="main-bottom-menu-item"
-        />
+            data-url={item.url} 
+            onclick={handleClick}
+            onkeydown={handleKeydown}
+            role="link"
+            tabindex="0"
+        >
+            <ecl-icon svg={item.details.icon} />
+            <span>{item.label.Value}</span>
+        </li>
+    </ul>
 </nav>

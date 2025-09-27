@@ -1,7 +1,8 @@
 {
     "children": [
         "~editName",
-        "~editParentName",
+        "~editParentId",
+        "~editIndex",
         "~editTitle",
         "~editContent"
     ],

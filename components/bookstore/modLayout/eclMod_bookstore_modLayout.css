@@ -24,36 +24,8 @@ textarea { width:100%; }
 .nav_list_search{display:flex; width:100%; height:4em;}
 .nav_list_search_item{margin: auto;}
 .general_link{margin: 8px;}
-.alert{background-color:#000; color:#fff; width: 100%; height:100%;}
-nav.main_bottom_menu{
-display:flex; width:100%; height:4em;
-justify-content: space-between; align-items: center;
-}
+.alert{background-color:#000; color:#fff; width: 100%; height:100%; }
 
-@media (max-width: 768px){
-    nav.main_bottom_menu{
-        flex-direction: column;
-        height: auto;
-    }
-
-}
-@media (max-width: 768px){
-    nav.main_bottom_menu_item{
-      margin: 2rem 0; 
-    }
-}
-
-
-@media (max-width: 768px){
-    .nav_list_search{
-        flex-direction: column;
-        height: auto;
-    }
-}
-
-@media (max-width: 768px){
-    .nav_list_search_item{
-        padding: 2rem 0; 
-    }
-}
-
+nav ul { list-style-type:none; display:flex; width:100%; height:6em; justify-content: space-between; align-items: center; color:#9cf; }
+nav li { display:flex; flex-direction:row; align-items:center; list-style-type:none; } 
+nav svg { width:32px; height:auto; color:currentColor; color:#9cf; }

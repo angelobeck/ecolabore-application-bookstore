@@ -1,13 +1,13 @@
 {
     "flags": {
         "filter": "filter_string",
-        "name": "parent_name",
-        "target": "parent_name"
+        "name": "parent_id",
+        "target": "parent_id"
     },
     "text": {
         "label": {
             "pt": {
-                "value": "parent_name"
+                "value": "parent_id"
             }
         }
     }

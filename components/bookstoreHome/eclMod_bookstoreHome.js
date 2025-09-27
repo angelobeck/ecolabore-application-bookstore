@@ -9,23 +9,14 @@ class eclMod_bookstoreHome extends eclMod {
 
         io.request()
             .then(response => {
-                this.sections = response.children;
-                store.bookstore_content = response.children;
+                localStorage.setItem('bookstore_content', serialize(response.children));
+                var bookstore_content = store.load('bookstore_content');
+                this.sections = bookstore_content.children(0);
             });
     }
 
     get _sections_() {
-        var sections = [];
-
-        if (!store.bookstore_content)
-            return [];
-
-        for (let i = 0; i < store.bookstore_content.length; i++) {
-            const section = store.bookstore_content[i];
-                sections.push(section);
-        }
-
-        return sections.map(section => {
+        return this.sections.map(section => {
             return {
                 title: section.text.title,
                 url: page.url([page.domain.name, section.name])

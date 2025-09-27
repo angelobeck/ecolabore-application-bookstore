@@ -7,7 +7,7 @@ class eclApp_bookstore extends eclApp
 
         static function constructorHelper(eclEngine_application $me): void
     {
-        $me->map = [...getMap('bookstore'), 'bookstoreHome', 'bookstoreLivros', 'bookstoreEstante', 'bookstoreComunidade', 'bookstoreAdmin', 'bookstoreCadastro', 'bookstoreLogin', 'bookstoreLogin_accessDenied', 'bookstoreLogin_invalidSession', 'bookstoreSobre', 'bookstoreAcets', 'bookstoreNotFound', 'systemJavascript', 'systemStyle'];
+        $me->map = [...getMap('bookstore'), 'bookstoreHome', 'bookstoreLivros', 'bookstoreEstante', 'bookstoreComunidade', 'bookstoreAdmin', 'bookstoreCadastro', 'bookstoreLogin', 'bookstoreLogin_accessDenied', 'bookstoreLogin_invalidSession', 'bookstoreContent', 'bookstoreAcets', 'bookstoreNotFound', 'systemJavascript', 'systemStyle'];
     }
 
     public static function dispatch(eclEngine_page $page): void

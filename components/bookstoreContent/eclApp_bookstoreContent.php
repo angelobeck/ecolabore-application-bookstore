@@ -1,6 +1,6 @@
 <?php
 
-class eclApp_bookstoreHome extends eclApp
+class eclApp_bookstoreContent extends eclApp
 {
     public static $name = '-home';
     public static $content = 'bookstoreHome_main';
@@ -14,10 +14,13 @@ class eclApp_bookstoreHome extends eclApp
     {
         $page->endpoints->main = 'bookstoreHome_main';
     }
-
     public static function view_main(eclEngine_page $page): void
     {
         $page->modules->content = 'bookstoreHome_main';
-    }
 
+        $about = $page->domain->child('sobre');
+        $page->modules->list->appendChild($about)
+        ->swapTitle()
+        ->url($about->path);
+    }
 }
