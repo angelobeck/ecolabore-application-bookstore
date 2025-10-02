@@ -132,6 +132,10 @@ nav li {
   align-items: center;
   list-style-type: none;
 }
+
+nav li:hover {
+  cursor: pointer;
+}
 nav svg {
   width: 32px;
   height: auto;
