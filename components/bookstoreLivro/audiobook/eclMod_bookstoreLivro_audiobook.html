@@ -1,1 +1,31 @@
-<p>Atualmente os audiobooks não estão disponíveis. Aguarde o lançamento oficial da Biblioteca Virtual!</p>
+    <template if:true={url}>
+    <p>Duração total: {_duration_}</p>
+    <p>Posição atual: {_currentTime_}</p>
+    <p>Velocidade de reprodução: <span aria-live="polite">{rate}x</span></p>
+    <p>Volume: <span aria-live="polite">{volume}%</span></p>
+    <div>
+        <input aria-valuetext={_currentTime_} type="range" min="0" max="100" step="1" value="0" onkeydown={handleRangeKeydown} />
+    </div>
+    <button onclick={actionPlayPause} onkeydown={handleRangeKeydown}>{_playPauseLabel_}</button>
+
+    <ecl-accordion label="Controles de reprodução">
+        <ul class="list-vertical">
+            <li><ecl-button label="Reduzir volume" onclick={actionVolumeDown} /></li>
+            <li><ecl-button label="Aumentar volume" onclick={actionVolumeUp} /></li>
+            <li><ecl-button label="Voltar ao início" onclick={actionSeekCtrlHome} /></li>
+            <li><ecl-button label="Voltar 10 minutos: Home" onclick={actionSeekHome} /></li>
+            <li><ecl-button label="Voltar 1 minuto: PageUp" onclick={actionSeekPageUp} /></li>
+            <li><ecl-button label="Voltar 10 segundos: Seta esquerda" onclick={actionSeekArrowLeft} /></li>
+            <li><ecl-button label="Avançar 10 segundos: Seta direita" onclick={actionSeekArrowRight} /></li>
+            <li><ecl-button label="Avançar 1 minuto: PageDown" onclick={actionSeekPageDown} /></li>
+            <li><ecl-button label="Avançar 10 minutos: End" onclick={actionSeekEnd} /></li>
+            <li><ecl-button label="Avançar quase até o fim" onclick={actionSeekCtrlEnd} /></li>
+            <li><ecl-button label="Reduzir velocidade de reprodução" onclick={actionRateSlow} /></li>
+            <li><ecl-button label="Aumentar velocidade de reprodução" onclick={actionRateFast} /></li>
+        </ul>
+    </ecl-accordion>
+
+    <p>É possível baixar o arquivo para escutá-lo em seu reprodutor de mídia favorito acionando o link abaixo.</p>
+        <a href={url} download={_fileName_}>Baixe o arquivo de áudio</a>
+
+</template>

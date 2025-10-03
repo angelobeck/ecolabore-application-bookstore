@@ -1,0 +1,16 @@
+{
+    "flags": {
+        "filter": "filter_checkbox",
+        "name": "audio",
+        "target": "format_audio",
+        "trueValue": 1,
+        "falseValue": 0
+            },
+    "text": {
+        "label": {
+            "pt": {
+                "value": "Disponível em áudio"
+            }
+        }
+    }
+}
