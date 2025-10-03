@@ -1,7 +1,4 @@
 {
-    "flags": {
-        "module": "form"
-    },
     "children": [
         "~editTitle",
         "~editAuthor",
@@ -19,6 +16,7 @@
         "~editPages",
         "~editInk",
         "~editBraille",
+        "~editAudio",
         "~editDuration",
         "~editNarrator",
         "~editPlatform",

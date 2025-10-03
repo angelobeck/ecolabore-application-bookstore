@@ -8,6 +8,7 @@ class eclApp_bookstore extends eclApp {
     }
 
     static dispatch(page) {
+        page.modules.content = 'bookstore_modContent_main';
         page.modules.dialog = 'bookstore_modDialog_main';
         page.modules.layout = 'bookstore_modLayout_main';
         page.modules.levelUp = 'bookstore_modLevelUp_main';

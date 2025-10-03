@@ -26,6 +26,7 @@
     <li if:true={_showAdultMessage_}>Este livro possui conteúdo adulto. Somente leitores cadastrados com mais de 18 anos podem ter acesso ao seu conteúdo.</li>
     <li if:true={_readerEnabled_}><ecl-link url={_urlReader_}>Leia o livro on-line</ecl-link></li>
     <li if:true={_downloadEnabled_}><ecl-link url={_urlDownload_}>Baixe o livro para ler no seu aplicativo favorito.</ecl-link></li>
+    <li if:true={_audiobookEnabled_}><ecl-link url={_urlAudiobook_}>Ouça a narração.</ecl-link></li>
     </ul>
 
     <template if:true={_showFavoriteButton_}>

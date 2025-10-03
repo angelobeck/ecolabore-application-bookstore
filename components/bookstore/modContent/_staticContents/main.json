@@ -1,0 +1,12 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Conteúdo"
+            }
+        }
+    },
+    "flags": {
+        "module": "bookstore_modContent"
+    }
+}

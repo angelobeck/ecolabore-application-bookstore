@@ -2,9 +2,10 @@
 
 <mod name="user" />
 
-<p if:false={User.name}>Acesse <ecl-link url={url}>Todos os livros em domínio público</ecl-link> para começar ler alguns livros on-line.</p>
-<p if:false={User.name}>Na nossa página de pesquisa você também poderá consultar livros em tinta e livros em braille disponíveis para empréstimo em nossa biblioteca física.</p>
+<p if:false={User.name}>Acesse aos <ecl-link url={url}>livros de domínio público</ecl-link> e comece a ler on-line.</p>
+<p>Na nossa página de pesquisa você também poderá consultar livros em tinta e em braille, disponíveis para empréstimo em nossa biblioteca física.</p>
 
+<h2 class="header">Sobre a Biblioteca</h2>
 <ul class="list-vertical" for:each={_sections_} for:item={section}>
     <li>
         <ecl-link url={section.url}>{section.title.Value}</ecl-link>
