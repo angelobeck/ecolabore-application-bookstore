@@ -13,8 +13,10 @@ class eclMod_bookstoreLivro_audiobook extends eclMod {
     name;
     src = '';
     url = false;
+    book = {};
 
     connectedCallback() {
+        this.track('book');
         this.track('currentTime');
         this.track('duration');
         this.track('paused');
@@ -27,6 +29,7 @@ class eclMod_bookstoreLivro_audiobook extends eclMod {
 
         io.request()
             .then(response => {
+                this.book = response.book;
                 this.audio = document.createElement('audio');
                 document.body.appendChild(this.audio);
                 this.audio.src = response.url;
@@ -38,6 +41,10 @@ class eclMod_bookstoreLivro_audiobook extends eclMod {
                     this.url = this.audio.src;
                 };
             });
+    }
+
+    get _urlNarrator_() {
+        return page.url([page.domain.name, 'livros', '-narradores', this.book.narrator_name]);
     }
 
     get _fileName_() {

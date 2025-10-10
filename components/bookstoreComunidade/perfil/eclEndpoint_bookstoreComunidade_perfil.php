@@ -11,6 +11,8 @@ class eclEndpoint_bookstoreComunidade_perfil extends eclEndpoint
         $user = &$store->user->openById($userId);
         if(!$user)
             return $this->error();
+        if($user['blocked'] > 0)
+            return $this->error();
 
         $userContent = $store->userContent->open($userId, '-public');
 

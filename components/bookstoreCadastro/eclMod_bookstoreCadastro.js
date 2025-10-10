@@ -91,7 +91,8 @@ class eclMod_bookstoreCadastro extends eclMod {
         navigate(page.url(page.application.parent.path));
     }
 
-    get _urlLevelUp_(){
+    get _urlHome_(){
         return page.url([page.domain.name]);
     }
+
 }

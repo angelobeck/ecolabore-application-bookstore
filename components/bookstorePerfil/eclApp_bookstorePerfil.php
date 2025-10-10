@@ -3,7 +3,7 @@
 class eclApp_bookstorePerfil extends eclApp
 {
     public static $name = 'perfil';
-    public static $map = ['bookstorePerfil_public', 'bookstorePerfil_personal', 'bookstorePerfil_password'];
+    public static $map = ['bookstorePerfil_public', 'bookstorePerfil_personal', 'bookstorePerfil_password', 'bookstorePerfil_remover'];
     public static $content = 'bookstorePerfil_main';
     public static $access = 1;
 

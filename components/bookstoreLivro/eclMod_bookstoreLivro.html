@@ -9,6 +9,7 @@
     <p if:true={book.details.language}>Idioma: {book.details.language}</p>
     <p if:true={book.collection_name}>Série: <ecl-link url={_urlCollection_}>{book.text.collection.pt.value}</ecl-link><span if:true={book.details.index}> - {book.details.index}</span></p>
     <p>Gênero: <ecl-link url={_urlGenre_} label={book.text.genre.Value} /></p>
+        <p if:true={book.text.notes}>Observações: {book.text.notes.Value}</p>
     <p if:true={book.text.keywords}>
         Palavras-chave:
         <template for:each={_keywords_} for:item={keyword}>

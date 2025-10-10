@@ -1,0 +1,19 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Usuários bloqueados"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Lista todos os usuários bloqueados que precisam ter seus dados pessoais removidos do banco de dados ou que devem permanecer em quarentena caso haja pendências"
+            }
+        }
+    },
+    "flags": {
+        "modList_show": true,
+        "module": "bookstoreAdminUsuarios_bloqueadosLista",
+        "endpoint": "bookstoreAdminUsuarios_bloqueadosLista"
+    }
+}

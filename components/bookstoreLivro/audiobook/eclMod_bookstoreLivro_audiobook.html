@@ -1,4 +1,8 @@
-    <template if:true={url}>
+<template if:true={url}>
+        <p>Título: {book.text.title.Value}</p>
+        <p>Autor: {book.text.author.Value}</p>
+        <p if:true={book.text.narrator}>Narrador: <ecl-link url={_urlNarrator_}>{book.text.narrator.Value}</ecl-link></p>
+        <p>Plataforma: {book.details.platform}</p>
     <p>Duração total: {_duration_}</p>
     <p>Posição atual: {_currentTime_}</p>
     <p>Velocidade de reprodução: <span aria-live="polite">{rate}x</span></p>

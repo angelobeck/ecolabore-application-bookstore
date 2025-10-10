@@ -82,7 +82,7 @@ class eclEndpoint_bookstoreLogin extends eclEndpoint
         global $io, $store;
 
         if (preg_match('/^[a-zA-Z0-9._-]+[@][a-zA-Z0-9_-]+[.][a-zA-Z0-9._-]+$/', $input['identifier'])) {
-            $where = ['mail' => $input['identifier']];
+            $where = ['mail' => $input['identifier'], 'blocked' => 0];
             $rows = $io->database->select($store->user, $where);
             if ($rows)
                 return $rows[0];
@@ -93,21 +93,21 @@ class eclEndpoint_bookstoreLogin extends eclEndpoint
         $numbersOnly = eclIo_convert::extractNumbers($input['identifier']);
 
         if (strlen($numbersOnly) === 11 or strlen($numbersOnly) === 9) {
-            $where = ['document' => $numbersOnly];
+            $where = ['document' => $numbersOnly, 'blocked' => 0];
             $rows = $io->database->select($store->user, $where);
             if ($rows)
                 return $rows[0];
         }
 
         if (strlen($numbersOnly) >= 11) {
-            $where = ['phone' => $numbersOnly];
+            $where = ['phone' => $numbersOnly, 'blocked' => 0];
             $rows = $io->database->select($store->user, $where);
             if ($rows)
                 return $rows[0];
         }
 
         if (preg_match('/^[a-z0-9_-]+$/', $input['identifier'])) {
-            $where = ['name' => $input['identifier']];
+            $where = ['name' => $input['identifier'], 'blocked' => 0];
             $rows = $io->database->select($store->user, $where);
             if ($rows)
                 return $rows[0];
