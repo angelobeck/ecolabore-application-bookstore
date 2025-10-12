@@ -1,7 +1,5 @@
-<nav for:each={children} for:item={item} style="display:flex;width:100%; height:  4em; ">
-    <a href={item.url} style="flex-basis:0; flex-grow:1;  display:flex; ">
-        <span style="margin:auto; ">
-            {item.title.Value}
-        </span>
-    </a>
+<nav for:each="{children}" for:item="{item}" style="display: flex; width: 100%">
+  <a href="{item.url}" style="flex-basis: 0; flex-grow: 1; display: flex">
+    <span style="margin: auto"> {item.title.Value} </span>
+  </a>
 </nav>
