@@ -2,7 +2,8 @@
     "children": [
         "~editMail",
         "~editPhone",
-        "~editCPF"
+        "~editDocumentType",
+        "~editDocument"
     ],
     "actions": [
         "~actionPrevious",

@@ -1,0 +1,16 @@
+{
+    "flags": {
+        "filter": "filter_string",
+        "name": "document_type",
+        "required": true,
+        "target": "details.documentType",
+        "default": "CPF"
+    },
+    "text": {
+        "label": {
+            "pt": {
+                "value": "Tipo de documento (CPF para brasileiros, NIF para portugueses ou correspondente número de identificação do seu país)"
+            }
+        }
+    }
+}

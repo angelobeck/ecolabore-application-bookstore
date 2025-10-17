@@ -3,7 +3,8 @@
         "~editSponsorName",
         "~editMail",
         "~editPhone",
-        "~editCPF"
+        "~editDocumentType",
+        "~editDocument"
     ],
     "actions": [
         "~actionPrevious",
