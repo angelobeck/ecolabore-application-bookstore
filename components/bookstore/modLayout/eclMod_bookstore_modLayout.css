@@ -115,6 +115,13 @@ textarea {
   height: 100%;
 }
 
+.main-bottom-menu {
+  width: 100%;
+  height: auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
 nav ul {
   list-style-type: none;
   display: flex;
@@ -123,12 +130,19 @@ nav ul {
   justify-content: space-between;
   align-items: center;
   color: #9cf;
+  padding: 0 0;
 }
 nav li {
   display: flex;
   flex-direction: row;
   align-items: center;
   list-style-type: none;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .icon svg {
   height: 32px;

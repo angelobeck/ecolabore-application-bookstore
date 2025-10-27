@@ -1,16 +1,19 @@
 <nav>
-    <ul for:each={_children_} for:item={item} class="main-bottom-menu">
-        <li
-            aria-current={item.current}
-            class="main-bottom-menu-item"
-            data-url={item.url} 
-            onclick={handleClick}
-            onkeydown={handleKeydown}
-            role="link"
-            tabindex="0"
-        >
-            <ecl-icon svg={item.details.icon} />
-            <span>{item.label.Value}</span>
-        </li>
-    </ul>
+  <ul for:each={_children_} for:item={item} class="main-bottom-menu">
+    <li
+      aria-current={item.current}
+      class="main-bottom-menu-item"
+      data-url={item.url}
+      onclick={handleClick}
+      onkeydown={handleKeydown}
+      role="link"
+      tabindex="0"
+    >
+      <div>
+        <ecl-icon svg={item.details.icon} />
+        <span>{item.label.Value}</span>
+      </div>
+    </li>
+  </ul>
 </nav>
+
