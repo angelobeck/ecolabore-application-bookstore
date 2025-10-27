@@ -130,11 +130,10 @@ nav li {
   align-items: center;
   list-style-type: none;
 }
-nav svg {
-  width: 32px;
-  height: auto;
-  color: currentColor;
-  color: #9cf;
+.icon svg {
+  height: 32px;
+  width: auto;
+  fill: currentColor;
 }
 
 .separator-short {

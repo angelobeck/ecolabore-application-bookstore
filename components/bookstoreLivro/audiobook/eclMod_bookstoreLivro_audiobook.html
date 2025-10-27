@@ -1,3 +1,9 @@
+<template if:true={errorMessage}>
+<p>{errorMessage.text.content.Value}</p>
+
+<mod name="user" />
+</template>
+
 <template if:true={url}>
         <p>Título: {book.text.title.Value}</p>
         <p>Autor: {book.text.author.Value}</p>

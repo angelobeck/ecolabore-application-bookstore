@@ -16,7 +16,11 @@ class eclMod_bookstoreLivro_download extends eclMod {
                     this.files = response.files;
             })
             .catch(error => {
-                this.message = error;
+                if(error.message) {
+                    var message = store.staticContent.open(error.message);
+                    if(message)
+                        this.message = message;
+                }
             });
     }
 

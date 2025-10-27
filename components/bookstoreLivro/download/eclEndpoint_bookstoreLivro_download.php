@@ -12,7 +12,7 @@ class eclEndpoint_bookstoreLivro_download extends eclEndpoint
         if(!$book)
             $message = 'O livro ' . $name . ' não foi encontrado.';
         else
-        $message = eclEndpoint_bookstoreLivro::bookRestrictions($this->page, $book, true);
+        $message = eclEndpoint_bookstoreLivro::bookRestrictions($this->page, $book, 'download');
         if(strlen($message))
             return $this->error(['message' => $message]);
 

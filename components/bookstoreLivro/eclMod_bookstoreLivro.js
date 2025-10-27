@@ -66,6 +66,9 @@ class eclMod_bookstoreLivro extends eclMod {
         return page.url([...page.application.path, 'download']);
     }
 
+    get _urlPerfil_() {
+        return page.url([page.domain.name, 'estante', 'perfil']);
+    }
     get _showAdultMessage_() {
         if (!this.book.adult)
             return false;
@@ -77,19 +80,32 @@ class eclMod_bookstoreLivro extends eclMod {
             return true;
     }
 
-    get _showProtectedMessage_() {
+    get _showUnverifiedMessage_() {
         if (this._showAdultMessage_)
             return false;
         if (this.book.public)
             return false;
-        if (page.session.user && page.session.user.name)
+        if (!page.session.user || !page.session.user.name)
+            return false;
+        if (page.session.user.groups && page.session.user.groups['-verified'])
             return false;
         else
             return true;
     }
 
+    get _showProtectedMessage_() {
+        if (this._showAdultMessage_ || this._showUnverifiedMessage_)
+            return false;
+        if (this.book.public)
+            return false;
+        if (!page.session.user || !page.session.user.name)
+            return true;
+        else
+            return false;
+    }
+
     get _readerEnabled_() {
-        if (this._showAdultMessage_ || this._showProtectedMessage_)
+        if (this._showAdultMessage_ || this._showUnverifiedMessage_ ||  this._showProtectedMessage_)
             return false;
         for (let i = 0; i < this.files.length; i++) {
             if (this.files[i] === this.book.name + '.txt')
@@ -99,7 +115,7 @@ class eclMod_bookstoreLivro extends eclMod {
     }
 
     get _downloadEnabled_() {
-        if (this._showAdultMessage_ || this._showProtectedMessage_)
+        if (this._showAdultMessage_ || this._showUnverifiedMessage_ || this._showProtectedMessage_)
             return false;
         if (!page.session.user || !page.session.user.name)
             return false;
@@ -112,7 +128,7 @@ class eclMod_bookstoreLivro extends eclMod {
     }
 
     get _audiobookEnabled_() {
-        if (this._showAdultMessage_ || this._showProtectedMessage_)
+        if (this._showAdultMessage_ || this._showUnverifiedMessage_ || this._showProtectedMessage_)
             return false;
         else if (this.book.format_audio)
             return true;

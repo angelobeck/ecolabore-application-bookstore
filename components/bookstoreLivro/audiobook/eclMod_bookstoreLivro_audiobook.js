@@ -10,6 +10,7 @@ class eclMod_bookstoreLivro_audiobook extends eclMod {
     volume = 100;
 
     configuration = {};
+    errorMessage = false;
     name;
     src = '';
     url = false;
@@ -19,6 +20,7 @@ class eclMod_bookstoreLivro_audiobook extends eclMod {
         this.track('book');
         this.track('currentTime');
         this.track('duration');
+        this.track('errorMessage');
         this.track('paused');
         this.track('rate');
         this.track('url');
@@ -40,7 +42,13 @@ class eclMod_bookstoreLivro_audiobook extends eclMod {
                     this.audio.playbackRate = this.rate;
                     this.url = this.audio.src;
                 };
-            });
+            })
+            .catch(error => {
+                if (error.message) {
+                    let message = store.staticContent.open(error.message);
+                    this.errorMessage = message;
+                }
+            });;
     }
 
     get _urlNarrator_() {
@@ -209,7 +217,8 @@ class eclMod_bookstoreLivro_audiobook extends eclMod {
     }
 
     disconnectedCallback() {
-        document.body.removeChild(this.audio);
+        if (this.audio)
+            document.body.removeChild(this.audio);
         delete this.audio;
     }
 

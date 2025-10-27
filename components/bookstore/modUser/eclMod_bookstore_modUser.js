@@ -17,7 +17,7 @@ class eclMod_bookstore_modUser extends eclMod {
             this.logout_url = page.url(true, true, '_logout');
         } else {
             this.isConnected = false;
-            this.login_url = page.url([...page.application.path, '-login']);
+            this.login_url = page.url([page.domain.name, 'estante', '-login']);
             this.subscribe_url = page.url([page.domain.name, 'cadastrar']);
         }
     }

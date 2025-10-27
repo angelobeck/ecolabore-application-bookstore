@@ -206,18 +206,27 @@ class eclEndpoint_bookstoreLivro extends eclEndpoint
             return false;
     }
 
-    static function bookRestrictions(eclEngine_page $page, array $book, bool $downloadEnabled = false): string
+    static function bookRestrictions(eclEngine_page $page, array $book, bool|string $downloadEnabled = false): string
     {
         $restrictions = self::userRestrictions($page);
 
         if (isset($restrictions['kid']) and $book['adult'])
-            return 'Este livro possui conteúdo adulto. Apenas leitores cadastrados com mais de 18 anos podem ter acesso a seu conteúdo.';
+            return 'bookstoreLivro_errorAdult';
+
+        if ($book['public'] and $downloadEnabled == 'reader')
+            return '';
 
         if (isset($restrictions['public']) and !$book['public'])
-            return 'Este livro está protegido por direitos autorais. Somente leitores cadastrados podem ter acesso a seu conteúdo.';
+            return 'bookstoreLivro_errorCopyright';
 
-        if (isset($restrictions['unverified']) and $downloadEnabled)
-            return 'Somente leitores verificados podem baixar os livros.';
+        if (isset($restrictions['unverified']) and $downloadEnabled === 'audio')
+            return 'bookstoreLivro_errorCopyright';
+
+        if (isset($restrictions['unverified']) and $downloadEnabled === 'reader')
+            return 'bookstoreLivro_errorCopyright';
+
+        if (isset($restrictions['unverified']) and $downloadEnabled === 'download')
+            return 'bookstoreLivro_errorCopyright';
 
         return '';
     }
