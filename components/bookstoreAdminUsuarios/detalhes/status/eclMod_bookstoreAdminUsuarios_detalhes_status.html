@@ -1,9 +1,23 @@
-<div if:true={showFormulary}>
-    <ecl-formulary name="bookstoreAdminUsuarios_detalhes_status_edit" fields={fields} onaction={handleAction} />
-</div>
-
-<ecl-modal message={error.message} context={error.context} name="alert">
-    <div>
-        <ecl-button onclick={closeAlert}>Fechar</ecl-button>
+<template if:true={userContent}>
+    <p>Nome: {userContent.text.title.Value}</p>
+    <p>Data de nascimento: {userContent.details.bornDate}</p>
+    <p>País: {userContent.details.country}</p>
+    <p if:true={user.kid}>Responsável: {userContent.text.sponsor.Value}</p>
+    <p>Email: {userContent.details.mail}</p>
+    <p>Telefone: {userContent.details.phone}</p>
+    <p>Documento: {userContent.details.document}</p>
+    
+<div if:true={extension} if:compare="jpg">
+    <a href={_urlDocument_} target="_blank">
+    <img style="width:100%; height:auto" src={_urlDocument_} alt="Visualização do documento - clique para abrir em uma nova janela." />
+</a>
     </div>
-</ecl-modal>
+    
+    <div if:true={extension} if:compare="pdf">
+    <a href={_urlDocument_} target="_blank">Visualizar documento PDF em uma nova janela</a>
+    </div>
+    
+    <div if:false={extension}>
+        <p>Não há arquivos de documentos deste leitor.</p>
+    </div>
+        </template>

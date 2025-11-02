@@ -1,0 +1,14 @@
+{
+    "text": {
+        "label": {
+            "pt": {
+                "value": "Falha no envio do arquivo"
+            }
+        },
+        "content": {
+            "pt": {
+                "value": "Ocorreu uma falha durante o envio do seu arquivo. Por gentileza, pedimos que tente enviá-lo novamente."
+            }
+        }
+    }
+}

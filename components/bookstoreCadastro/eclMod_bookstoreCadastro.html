@@ -27,7 +27,7 @@
 <p><gender m="Bem-vindo" f="Bem-vinda" /> à Biblioteca Virtual da ACIC.</p>
 <p>Embora esta biblioteca seja comunitária, a maior parte dos livros possui restrições de direitos autorais. Para garantir o alinhamento das nossas atividades com a legislação brasileira, precisamos que você envie um laudo médico ou documento de identidade com o CID, comprovando sua condição de deficiência visual.</p>
 <p>Se não puder enviar o documento agora, você poderá fazê-lo mais tarde acessando o seu perfil.</p>
-    <ecl-file-upload title="Enviar documento agora" onloadend={actionStep6} />
+    <ecl-file-upload title="Enviar documento agora" onloadend={actionStep6} onerror={fileUploadError} />
     <ecl-button onclick={actionStep6}>Enviar mais tarde</ecl-button>
     </div> 
 

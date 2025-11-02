@@ -1,0 +1,19 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Aguardando o envio de documentos"
+            }
+        },
+        "description": {
+            "pt": {
+                "value": "Lista todos os usuários que se cadastraram mas que ainda não enviaram documento."
+            }
+        }
+    },
+    "flags": {
+        "modList_show": true,
+        "module": "bookstoreAdminUsuarios_semDocumentoLista",
+        "endpoint": "bookstoreAdminUsuarios_semDocumentoLista"
+    }
+}

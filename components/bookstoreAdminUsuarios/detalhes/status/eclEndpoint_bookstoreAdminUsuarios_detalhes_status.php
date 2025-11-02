@@ -5,23 +5,50 @@ class eclEndpoint_bookstoreAdminUsuarios_detalhes_status extends eclEndpoint
 
     public function dispatch(array $input): array
     {
-        global $io, $store;
-        $userId = intval($this->page->application->parent->name);
+        global $store;
 
+        $userId = intval($this->page->application->parent->name);
         $user = &$store->user->openById($userId);
         if (!$user)
-            return $this->error('');
+            return $this->error();
 
-       if (isset($input['status'])) {
-            $formulary = $this->page->createFormulary('bookstoreAdminUsuarios_detalhes_status_edit', $user);
-            $formulary->sanitize($input);
-            if ($formulary->error)
-                return $this->error($formulary->error);
+        $userContent = $store->userContent->open($userId, '-personal');
 
-            $user = $formulary->data;
+        if (isset($input['action'])) {
+            if ($input['action'] === 'accept')
+                $user['verified'] = 4;
+            else if ($input['action'] === 'reject')
+                $user['verified'] = 2;
+            else if ($input['action'] === 'block')
+                $user['blocked'] = 1;
+            else if ($input['action'] === 'unblock')
+                $user['blocked'] = 0;
         }
 
-        return $this->response(['status' => $user['status']]);
+        $data = [
+            'name' => $user['name'],
+            'verified' => $user['verified'],
+            'blocked' => $user['blocked'],
+            'kid' => $user['kid']
+        ];
+                    
+        
+        $document = '';
+        $dir = PATH_USERS . $user['name'];
+        if (is_dir($dir)) {
+            foreach (scandir($dir) as $file) {
+                if (substr($file, 0, 9) == '_document') {
+                    $document = $file;
+                    break;
+                }
+            }
+        }
+
+        return $this->response([
+            'user' => $data,
+            'userContent' => $userContent,
+            'document' => $document
+        ]);
     }
 
 }

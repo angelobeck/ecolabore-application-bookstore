@@ -2,12 +2,12 @@
     "text": {
         "title": {
             "pt": {
-                "value": "Status"
+                "value": "Status e documentação"
             }
         },
         "description": {
             "pt": {
-                "value": "Bloqueia, desbloqueia ou exclui o usuário."
+                "value": "Bloqueia, desbloqueia, aceita ou rejeita os documentos do usuário."
             }
         }
     },

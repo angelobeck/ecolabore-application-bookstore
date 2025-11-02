@@ -1,53 +1,42 @@
 
 class eclMod_bookstoreAdminUsuarios_detalhes_status extends eclMod {
-    formulary;
-    fields;
-    showFormulary = false;
-    showAlert = false;
-    raw;
-    error = {};
+    user = {};
+    userContent = {};
+    document = '';
+    extension = '';
 
     connectedCallback() {
-        this.track('showFormulary');
-        this.track('showAlert');
-        this.track('raw');
+        this.track('user');
 
         io.request()
-            .then(response => {
-                this.showFormulary = true;
-                this.fields = response;
+            .then((response, raw) => {
+                this.user = response.user;
+                this.userContent = response.userContent;
+                this.document = response.document;
+                this.extension = this.document.split('.').pop();
             })
-            .catch((error, raw) => {
-                this.error = error;
-                if (error.message)
-                    page.alertOpen('alert');
-                else
-                    this.raw = raw;
-
+            .catch(error => {
+                this.response = error;
             });
     }
 
-    handleAction(event) {
-        var action = event.detail.action;
-        var formulary = event.detail.formulary;
-
-        if (action === 'save') {
-            io.request(formulary.fields)
-                .then(fields => {
-                    this.fields = fields;
-                    navigate(page.url(page.application.parent.path));
-                })
-                .catch((error, raw) => {
-                    this.error = error;
-                    if (error.message)
-                        page.alertOpen('alert');
-                });
-
-        }
+    get _urlDocument_() {
+        var path = [...page.application.parent.path, 'documento.' + this.extension];
+        return page.url(path);
     }
 
-    closeAlert() {
-        page.alertClose('alert');
+    actionAccept() {
+        io.request({ action: "accept" })
+            .then(() => {
+                navigate(page.url(page.application.parent.path));
+            });
+    }
+
+    actionReject() {
+        io.request({ action: "reject" })
+            .then(() => {
+                navigate(page.url(page.application.parent.path));
+            });
     }
 
 }

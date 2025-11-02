@@ -2,6 +2,8 @@
 class eclMod_bookstoreAdminUsuarios_verificar extends eclMod {
     user = {};
     userContent = {};
+    document = '';
+    extension = '';
     nameMonitor = '';
 
     connectedCallback() {
@@ -18,8 +20,11 @@ class eclMod_bookstoreAdminUsuarios_verificar extends eclMod {
     update() {
         io.request()
             .then(response => {
+                this.response = response;
                 this.user = response.user;
                 this.userContent = response.userContent;
+                this.document = response.document;
+                this.extension = this.document.split('.').pop();
             })
             .catch(error => {
                 this.error = true;
@@ -27,7 +32,7 @@ class eclMod_bookstoreAdminUsuarios_verificar extends eclMod {
     }
 
     get _urlDocument_() {
-        var path = [...page.application.path, 'documento.jpg'];
+                var path = [...page.application.path, 'documento.' + this.extension];
         return page.url(path);
     }
 

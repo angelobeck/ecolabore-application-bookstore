@@ -84,14 +84,19 @@ class eclMod_bookstoreCadastro extends eclMod {
     }
 
     actionStep6(event) {
-            this.step++;
+        this.step++;
+    }
+
+    fileUploadError(event) {
+        this.error = event.detail;
+        page.alertOpen('alert');
     }
 
     actionStep7() {
         navigate(page.url(page.application.parent.path));
     }
 
-    get _urlHome_(){
+    get _urlHome_() {
         return page.url([page.domain.name]);
     }
 

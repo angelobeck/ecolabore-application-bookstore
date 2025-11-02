@@ -1,3 +1,4 @@
+
 <template if:true={userContent}>
     <p>Nome: {userContent.text.title.Value}</p>
     <p>Data de nascimento: {userContent.details.bornDate}</p>
@@ -6,9 +7,15 @@
     <p>Email: {userContent.details.mail}</p>
     <p>Telefone: {userContent.details.phone}</p>
     <p>Documento: {userContent.details.document}</p>
-
-    <div>
-    <img style="width:100%; height:auto" src={_urlDocument_} alt="Visualização do documento" />
+    
+<div if:true={extension} if:compare="jpg">
+    <a href={_urlDocument_} target="_blank">
+        <img style="width:100%; height:auto" src={_urlDocument_} alt="Visualização do documento - clique para abrir em uma nova janela." />
+    </a>
+    </div>
+    
+    <div if:true={extension} if:compare="pdf">
+    <a href={_urlDocument_} target="_blank">Visualizar documento PDF em outra janela</a>
     </div>
     
     <ecl-button onclick={actionAccept}>Aprovar</ecl-button>

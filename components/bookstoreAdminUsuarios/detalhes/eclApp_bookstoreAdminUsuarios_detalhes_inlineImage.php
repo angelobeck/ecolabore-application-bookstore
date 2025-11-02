@@ -1,6 +1,6 @@
 <?php
 
-class eclApp_bookstoreAdminUsuarios_verificar_inlineImage extends eclApp
+class eclApp_bookstoreAdminUsuarios_detalhes_inlineImage extends eclApp
 {
     public static $name = 'documento.jpg';
 
@@ -18,7 +18,6 @@ class eclApp_bookstoreAdminUsuarios_verificar_inlineImage extends eclApp
             exit();
         $name = $user['name'];
         $location = PATH_USERS . $name . '/_document.jpg';
-        ;
 
         if (is_file($location)) {
             eclIo_sendFile::send($location, ['Content-Disposition' => 'inline']);

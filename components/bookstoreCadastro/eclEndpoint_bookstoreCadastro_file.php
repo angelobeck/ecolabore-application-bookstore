@@ -19,25 +19,33 @@ class eclEndpoint_bookstoreCadastro_file extends eclEndpoint
         else if ($_FILES['file'][0])
             $received = $_FILES['file'][0];
         else
-            return $this->error('');
+            return $this->error('bookstoreCadastro_errorFileNotFound');
 
         if ($received['size'] == 0)
-            return $this->error('');
+            return $this->error('bookstoreCadastro_errorFileNotFound');
         if (isset($received['error']) && $received['error'])
-            return $this->error('');
+            return $this->error('bookstoreCadastro_errorFileNotFound');
 
         $dir = PATH_USERS . $name;
         if (!is_dir($dir))
             mkdir($dir);
 
         $originalFilename = $received['name'];
-        [$originalName, $extension] = explode('.', $originalFilename);
+        $parts = explode('.', $originalFilename);
+        $extension = end($parts);
         $extension = strtolower($extension);
 
-        $location = $dir . '/' . '_document.' . $extension;
+        switch ($extension) {
+            case 'jpg':
+            case 'jpeg':
+            case 'pdf':
+                $location = $dir . '/' . '_document.' . $extension;
 
-        move_uploaded_file($received['tmp_name'], $location);
-        $user['verified'] = 1;
-        return $this->response([]);
+                move_uploaded_file($received['tmp_name'], $location);
+                $user['verified'] = 1;
+                return $this->response();
+        }
+        return $this->error('bookstoreCadastro_errorFileType');
     }
+
 }
