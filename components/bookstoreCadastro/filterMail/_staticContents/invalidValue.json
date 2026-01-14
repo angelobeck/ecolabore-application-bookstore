@@ -1,0 +1,14 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Ooops!"
+            }
+        },
+        "content": {
+            "pt": {
+                "value": "O email #q{value}#q não parece ser válido."
+            }
+        }
+    }
+}

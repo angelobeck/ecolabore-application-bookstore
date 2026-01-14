@@ -1,6 +1,7 @@
 {
     "flags": {
         "filter": "bookstoreCadastro_filterIdentifier",
+        "id": "bookstoreCadastro_editIdentifier",
         "name": "identifier",
         "required": true,
         "target": "identifier"

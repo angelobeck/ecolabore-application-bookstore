@@ -246,7 +246,7 @@ class eclEndpoint_bookstoreLivro extends eclEndpoint
 
         $restrictions = [];
 
-        if (isset($user['kid']) and $user['kid'])
+        if (isset($user['kid']) and $user['kid'] > TIME)
             $restrictions['kid'] = true;
 
         if (!isset($user['verified']) || $user['verified'] != 4)

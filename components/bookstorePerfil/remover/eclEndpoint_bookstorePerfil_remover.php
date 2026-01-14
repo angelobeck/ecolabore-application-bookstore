@@ -15,6 +15,8 @@ class eclEndpoint_bookstorePerfil_remover extends eclEndpoint
         $name = $this->page->session['user']['name'];
 
         $user = &$store->user->open($name);
+        if(!$user)
+            return $this->error();
         $user['blocked'] = 1;
 
         $this->page->session = [];

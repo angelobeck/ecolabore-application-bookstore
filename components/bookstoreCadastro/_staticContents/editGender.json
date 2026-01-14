@@ -1,6 +1,7 @@
 {
     "flags": {
-        "filter": "filter_radio"
+        "filter": "filter_radio",
+        "id": "bookstoreCadastro_editGender"
     },
     "text": {
         "label": {

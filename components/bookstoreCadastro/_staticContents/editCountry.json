@@ -1,6 +1,8 @@
 {
     "flags": {
-        "filter": "filter_string",
+        "filter": "filter_select",
+        "autocomplete": "country-name",
+        "id": "bookstoreCadastro_editCountry",
         "name": "country",
         "required": true,
         "target": "details.country"
@@ -11,5 +13,6 @@
                 "value": "País de origem"
             }
         }
-    }
+    },
+"optionsList": "Brasil, Portugal, Angola, Cabo Verde, Guiné-Bissau, Guiné Equatorial, Macau, Moçambique, São Tomé e Príncipe, Timor-Leste, Afeganistão, África do Sul, Albânia, Alemanha, Andorra, Antígua e Barbuda, Arábia Saudita, Argélia, Argentina, Armênia, Austrália, Áustria, Azerbaijão, Bahamas, Bangladesh, Barbados, Barein, Belarus, Bélgica, Belize, Benim, Bolívia, Bósnia e Herzegovina, Botsuana, Brunei, Bulgária, Burkina Fasso, Burundi, Butão, Camarões, Camboja, Canadá, Catar, Cazaquistão, Chade, Chile, China, Chipre, Colômbia, Comores, Congo, Coreia do Norte, Coreia do Sul, Costa do Marfim, Costa Rica, Croácia, Cuba, Dinamarca, Djibuti, Dominica, Egito, El Salvador, Emirados Árabes Unidos, Equador, Eritreia, Eslováquia, Eslovênia, Espanha, Essuatíni, Estados Unidos, Estônia, Etiópia, Fiji, Filipinas, Finlândia, França, Gabão, Gâmbia, Gana, Geórgia, Granada, Grécia, Guatemala, Guiana, Guiné, Haiti, Honduras, Hungria, Iêmen, Ilhas Marshall, Ilhas Salomão, Índia, Indonésia, Irã, Iraque, Irlanda, Islândia, Israel, Itália, Jamaica, Japão, Jordânia, Kiribati, Kosovo, Kuwait, Laos, Lesoto, Letônia, Líbano, Libéria, Líbia, Liechtenstein, Lituânia, Luxemburgo, Macedônia do Norte, Madagascar, Malásia, Malaui, Maldivas, Mali, Malta, Marrocos, Maurício, Mauritânia, México, Mianmar, Micronésia, Moçambique, Moldávia, Mônaco, Mongólia, Montenegro, Namíbia, Nauru, Nepal, Nicarágua, Níger, Nigéria, Noruega, Nova Zelândia, Omã, Países Baixos¹ , Palau, Panamá, Papua-Nova Guiné, Paquistão, Paraguai, Peru, Polônia, Quênia, Quirguistão, Reino Unido, República Centro-Africana, República Democrática do Congo, República Dominicana, República Tcheca, Romênia, Ruanda, Rússia, Samoa, San Marino, Santa Lúcia, São Cristóvão e Névis, São Vicente e Granadinas, Seicheles, Senegal, Serra Leoa, Sérvia, Singapura, Síria, Somália, Sri Lanka, Sudão, Sudão do Sul, Suécia, Suíça, Suriname, Tadjiquistão, Tailândia, Taiwan, Tanzânia, Togo, Tonga, Trinidad e Tobago, Tunísia, Turcomenistão, Turquia, Tuvalu, Ucrânia, Uganda, Uruguai, Uzbequistão, Vanuatu, Vaticano, Venezuela, Vietnã, Zâmbia, Zimbábue"
 }

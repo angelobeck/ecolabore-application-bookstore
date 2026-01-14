@@ -1,6 +1,7 @@
 {
     "flags": {
-        "filter": "filter_string",
+        "filter": "bookstoreCadastro_filterDocument",
+        "id": "bookstoreCadastro_editDocument",
         "name": "document",
         "required": true,
         "target": "details.document"

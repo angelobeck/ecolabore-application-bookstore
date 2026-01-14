@@ -1,6 +1,7 @@
 {
     "flags": {
         "filter": "bookstoreCadastro_filterBornDate",
+        "id": "bookstoreCadastro_editBornDate",
         "name": "bornDate",
         "required": true,
         "target": "details.bornDate"

@@ -2,11 +2,12 @@
   <ul for:each={_children_} for:item={item} class="main-bottom-menu">
     <li
       aria-current={item.current}
+      aria-disabled={item.disabled}
       class="main-bottom-menu-item"
       data-url={item.url}
       onclick={handleClick}
       onkeydown={handleKeydown}
-      role="link"
+      role={item.role}
       tabindex="0"
     >
       <div>
@@ -17,3 +18,11 @@
   </ul>
 </nav>
 
+<cut target="menu" name="menu"}>
+    <div>
+        <h1 class="header" tabindex="0" wire:element={headerElement}>Menu</h1>
+        <mod name="userContext" />
+        <hr />
+        <ecl-button onclick={menuClose}>Fechar</ecl-button>
+    </div>
+</cut>

@@ -1,3 +1,12 @@
 <p if:true={errorMessage}>{errorMessage.text.content.Value}</p>
 
-{content}
+<p>Para inserir um marcador usando o mouse, clique no parágrafo a marcar.</p>
+<p>Para inserir um marcador usando o teclado, pressione "Enter" no parágrafo a marcar.</p>
+<p>Para inserir um marcador em tela de toque, dê um duplo toque no parágrafo a marcar.</p>
+<p aria-live="polite">{_currentParagraph_}</p>
+<ecl-button label="Ir para meu marcador" onclick={actionGotoMarker} />
+
+
+<div for:each={_paragraphs_} for:item={paragraph} wire:element={paragraphs}>
+    <p onkeydown={handleKeydown} onclick={handleContextmenu}>{paragraph}</p>
+</div>

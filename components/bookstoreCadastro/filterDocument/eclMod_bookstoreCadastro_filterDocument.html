@@ -1,0 +1,42 @@
+<template     if:true={country} if:compare="Brasil">
+<ecl-input
+    id={control.flags.id}
+    label="CPF"
+    onchange={handleDocumentChange}
+    type="tel"
+    value={document}
+    class="field_text_input"
+></ecl-input>
+</template>
+
+<template     if:true={country} if:compare="Portugal">
+<ecl-input
+    id={control.flags.id}
+    label="NIF"
+    onchange={handleDocumentChange}
+    type="tel"
+    value={document}
+    class="field_text_input"
+></ecl-input>
+</template>
+
+<template if:true={_otherCountry_}>
+  
+<ecl-input
+    id={_documentTypeId_}
+    label="Tipo de documento"
+    onchange={handleDocumentTypeChange}
+    value={documentType}
+    class="field_text_input"
+></ecl-input>
+
+<ecl-input
+    id={control.flags.id}
+    label="Número do documento"
+    type="tel"
+    onchange={handleDocumentChange}
+    value={document}
+    class="field_text_input"
+></ecl-input>
+
+</template>

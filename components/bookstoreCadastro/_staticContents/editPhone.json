@@ -1,6 +1,7 @@
 {
     "flags": {
-        "filter": "filter_string",
+        "filter": "bookstoreCadastro_filterPhone",
+        "id": "bookstoreCadastro_editPhone",
         "name": "phone",
         "required": true,
         "target": "details.phone"

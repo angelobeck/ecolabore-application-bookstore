@@ -1,0 +1,19 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Mensageria"
+            }
+        },
+        "label": {
+            "pt": {
+                "value": "Mensageria"
+            }
+        }
+    },
+    "flags": {
+        "modList_show": true,
+        "module": "bookstoreAdminAvisos_mensageria",
+        "endpoint": "bookstoreAdminAvisos_mensageria"
+    }
+}

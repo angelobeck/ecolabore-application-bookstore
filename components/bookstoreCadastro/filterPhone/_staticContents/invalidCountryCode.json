@@ -1,0 +1,14 @@
+{
+    "text": {
+        "title": {
+"pt": {
+    "value": "Ooops!"
+}
+        },
+        "content": {
+            "pt": {
+                "value": "Informe um código de país válido. Um código de país começa com #q+#q seguido de 1 a 3 dígitos. Por exemplo, para o Brasil, o código é +55."
+            }
+        }
+    }
+}

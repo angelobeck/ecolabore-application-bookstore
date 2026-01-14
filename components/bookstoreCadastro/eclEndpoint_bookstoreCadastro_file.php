@@ -16,7 +16,7 @@ class eclEndpoint_bookstoreCadastro_file extends eclEndpoint
         $received = [];
         if (isset($_FILES['file']['name']))
             $received = $_FILES['file'];
-        else if ($_FILES['file'][0])
+        else if (isset($_FILES['file'][0]))
             $received = $_FILES['file'][0];
         else
             return $this->error('bookstoreCadastro_errorFileNotFound');
@@ -36,8 +36,9 @@ class eclEndpoint_bookstoreCadastro_file extends eclEndpoint
         $extension = strtolower($extension);
 
         switch ($extension) {
-            case 'jpg':
             case 'jpeg':
+                $extension = 'jpg';
+            case 'jpg':
             case 'pdf':
                 $location = $dir . '/' . '_document.' . $extension;
 

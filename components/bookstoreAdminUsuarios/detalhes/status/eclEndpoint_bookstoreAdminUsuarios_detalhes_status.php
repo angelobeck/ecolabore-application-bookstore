@@ -14,25 +14,6 @@ class eclEndpoint_bookstoreAdminUsuarios_detalhes_status extends eclEndpoint
 
         $userContent = $store->userContent->open($userId, '-personal');
 
-        if (isset($input['action'])) {
-            if ($input['action'] === 'accept')
-                $user['verified'] = 4;
-            else if ($input['action'] === 'reject')
-                $user['verified'] = 2;
-            else if ($input['action'] === 'block')
-                $user['blocked'] = 1;
-            else if ($input['action'] === 'unblock')
-                $user['blocked'] = 0;
-        }
-
-        $data = [
-            'name' => $user['name'],
-            'verified' => $user['verified'],
-            'blocked' => $user['blocked'],
-            'kid' => $user['kid']
-        ];
-                    
-        
         $document = '';
         $dir = PATH_USERS . $user['name'];
         if (is_dir($dir)) {
@@ -43,6 +24,31 @@ class eclEndpoint_bookstoreAdminUsuarios_detalhes_status extends eclEndpoint
                 }
             }
         }
+
+        if (isset($input['action'])) {
+            if ($input['action'] === 'accept' and $document)
+                $user['verified'] = 4;
+            else if ($input['action'] === 'reject' and $document)
+                $user['verified'] = 2;
+            else if ($input['action'] === 'block')
+                $user['blocked'] = 4;
+            else if ($input['action'] === 'unblock')
+                $user['blocked'] = 0;
+            else if ($input['action'] === 'removedocument' and $document) {
+                unlink(PATH_USERS . $user['name'] . '/' . $document);
+                $document = '';
+                $user['verified'] = 0;
+            }
+        }
+
+        $data = [
+            'name' => $user['name'],
+            'verified' => $user['verified'],
+            'blocked' => $user['blocked'],
+            'kid' => $user['kid'] > TIME ? $user['kid'] : 0
+        ];
+
+
 
         return $this->response([
             'user' => $data,

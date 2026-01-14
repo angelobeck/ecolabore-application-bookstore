@@ -1,6 +1,7 @@
 {
     "flags": {
         "filter": "bookstoreCadastro_filterNick",
+        "id": "bookstoreCadastro_editUserNick",
         "name": "user_nick",
         "required": true,
         "target": "text.nick.pt.value"

@@ -1,0 +1,14 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Ooops!"
+            }
+        },
+        "content": {
+            "pt": {
+                "value": "Você precisa especificar qual tipo de documento está informando. Por exemplo: #qCédula de identidade#q."
+            }
+        }
+    }
+}

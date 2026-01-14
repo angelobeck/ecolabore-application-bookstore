@@ -2,6 +2,7 @@
     "flags": {
         "filter": "filter_string",
         "name": "sponsor_name",
+        "id": "bookstoreCadastro_editSponsorName",
         "required": true,
         "target": "text.sponsor.pt.value"
     },

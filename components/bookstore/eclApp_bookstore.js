@@ -16,5 +16,6 @@ class eclApp_bookstore extends eclApp {
         page.modules.nav = 'bookstore_modNav_main';
         page.modules.title = 'bookstore_modTitle_main';
         page.modules.user = 'bookstore_modUser_main';
+        page.modules.userContext = 'bookstore_modUserContext_main';
     }
 }

@@ -1,0 +1,14 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Usuário cadastrado"
+            }
+        },
+        "content": {
+            "pt": {
+                "value": "O documento #q{value}#q já está cadastrado em nosso sistema. Se você está com dificuldade para acessar seu perfil, entre em contato para que possamos ajudá-lo."
+            }
+        }
+    }
+}

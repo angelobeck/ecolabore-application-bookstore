@@ -25,7 +25,7 @@ class eclEndpoint_bookstoreLivros extends eclEndpoint
         $where['mode'] = eclStore_bookstore_book::MODE_BOOK;
         $where['keywords'] = implode(' ', $keywords);
 
-        $rows = $io->database->select($store->bookstore_book, $where, 100);
+        $rows = $io->database->select($store->bookstore_book, $where);
 
         $groups = [];
         foreach ($rows as $row) {
@@ -46,11 +46,16 @@ class eclEndpoint_bookstoreLivros extends eclEndpoint
                 $groups[$points][] = $row;
         }
 
+        $counter = 0;
         krsort($groups);
         $sorted = [];
         foreach ($groups as $group) {
             foreach ($group as $row) {
                 $sorted[] = $row;
+                $counter++;
+                if($counter > 100) {
+                    break 2;
+                }
             }
         }
         return [

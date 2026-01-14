@@ -1,12 +1,12 @@
-<label>
+<label class="field">
     Sua pesquisa
     <input type="text" class="field_text_input" wire:element={filterKeywords} onkeydown={handleInputKeydown} />
 </label>
-<button onclick={handleButtonClick} onkeydown={handleButtonKeydown} class="general_button">
+<ecl-button onclick={handleButtonClick} onkeydown={handleButtonKeydown}>
     Pesquisar
-</button>
+</ecl-button>
 
-<h2>Resultados da pesquisa</h2>
+<h2 class="header">Resultados da pesquisa</h2>
 
 <p aria-live="polite">{status}</p>
 
@@ -16,4 +16,4 @@
     </li>
 </ul>
 
-<h2>Explorar a biblioteca</h2>
+<h2 class="header">Explorar a biblioteca</h2>

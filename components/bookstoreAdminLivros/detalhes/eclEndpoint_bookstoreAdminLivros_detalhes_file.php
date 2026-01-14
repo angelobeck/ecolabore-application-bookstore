@@ -11,7 +11,7 @@ class eclEndpoint_bookstoreAdminLivros_detalhes_file extends eclEndpoint
         $received = [];
         if (isset($_FILES['file']['name']))
             $received = $_FILES['file'];
-        else if ($_FILES['file'][0])
+        else if (isset($_FILES['file'][0]))
             $received = $_FILES['file'][0];
         else
             return $this->error('');

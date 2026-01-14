@@ -30,13 +30,14 @@ class eclFilter_bookstoreCadastro_filterNick extends eclFilter
             return [];
         }
 
-        if (isset($control['required']))
             return [
         'message' => 'filter_string_requiredField',
-        'context' => ['label' => $control['label'] ?? '']
+        'context' => [
+            'label' => $control['label'] ?? '',
+            'id' => $control['id'] ?? ''
+        ]
         ];
 
-        return [];
     }
 
     public static function save(eclEngine_formulary $formulary, array $control, string $name)

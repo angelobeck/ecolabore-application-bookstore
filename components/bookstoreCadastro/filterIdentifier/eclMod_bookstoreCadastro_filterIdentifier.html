@@ -1,17 +1,8 @@
 <ecl-input
+    autocomplete="username"
+    id={control.flags.id}
     label={control.text.label}
-    if:false={control.flags.display}
-    if:compare="textarea"
     onchange={handleChange}
     value={value}
     class="field_text_input"
 ></ecl-input>
-
-<ecl-textarea
-    label={control.text.label}
-    if:true={control.flags.display}
-    if:compare="textarea"
-    onchange={handleChange}
-    value={value}
-    class="field_text_input"
-></ecl-textarea>

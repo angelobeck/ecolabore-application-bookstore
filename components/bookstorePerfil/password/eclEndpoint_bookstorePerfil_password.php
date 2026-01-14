@@ -18,6 +18,6 @@ class eclEndpoint_bookstorePerfil_password extends eclEndpoint
         $user = &$store->user->open($userName);
         $user['password'] = $input['password'];
 
-        return $this->response('');
+        return $this->response();
             }
 }

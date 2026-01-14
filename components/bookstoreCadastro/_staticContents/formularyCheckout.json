@@ -2,7 +2,7 @@
     "children": [
         "~editBornDate",
         "~editCountry",
-        "~editCPF",
+        "~editDocument",
         "~editIdentifier",
         "~editMail",
         "~editPassword",

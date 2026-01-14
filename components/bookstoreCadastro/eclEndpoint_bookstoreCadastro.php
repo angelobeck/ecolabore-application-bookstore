@@ -19,9 +19,9 @@ class eclEndpoint_bookstoreCadastro extends eclEndpoint
 
                 $user = [
                     'name' => $data['identifier'],
-                    'phone' => $data['details']['phone'],
+                    'phone' => eclIo_convert::extractNumbers($data['details']['countryCode'] . $data['details']['phone']),
                     'mail' => $data['details']['mail'],
-                    'document' => $data['details']['document'],
+                    'document' => eclIo_convert::extractNumbers($data['details']['document']),
                     'password' => $data['password'],
                     'kid' => $data['minor']
                 ];
@@ -29,7 +29,6 @@ class eclEndpoint_bookstoreCadastro extends eclEndpoint
                 $userId = $store->user->insert($user);
 
                 $userPersonal = $data;
-                ;
                 $userPersonal['name'] = '-personal';
                 $userPersonal['mode'] = 'register';
                 $userPersonal['encrypt'] = true;
@@ -55,8 +54,8 @@ class eclEndpoint_bookstoreCadastro extends eclEndpoint
 
                 $groups = [];
                 $session = [];
-        if (!isset($user['kid']) or $user['kid'] < TIME)
-            $groups['adult'] = 4;
+                if (!isset($user['kid']) or $user['kid'] < TIME)
+                    $groups['adult'] = 4;
 
                 $session['name'] = $user['name'];
                 $session['text'] = ['title' => $userPublic['text']['title']];

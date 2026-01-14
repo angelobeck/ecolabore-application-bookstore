@@ -1,0 +1,14 @@
+{
+    "text": {
+        "title": {
+            "pt": {
+                "value": "Ooops!"
+            }
+        },
+        "content": {
+            "pt": {
+                "value": "  O documento #q{value}#q não parece ser válido. Informe o número do documento de identificação pessoal do seu país."
+            }
+        }
+    }
+}

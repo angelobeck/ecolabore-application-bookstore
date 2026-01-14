@@ -1,6 +1,7 @@
 {
     "flags": {
-        "filter": "filter_string",
+        "filter": "bookstoreCadastro_filterMail",
+        "id": "bookstoreCadastro_editMail",
         "name": "mail",
         "required": true,
         "target": "details.mail"

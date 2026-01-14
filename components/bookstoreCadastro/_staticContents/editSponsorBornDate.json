@@ -1,6 +1,7 @@
 {
     "flags": {
         "filter": "filter_string",
+        "id": "bookstoreCadastro_editSponsorBornDate",
         "name": "sponsor_born_date",
         "required": true,
         "target": "details.sponsorBornDate"

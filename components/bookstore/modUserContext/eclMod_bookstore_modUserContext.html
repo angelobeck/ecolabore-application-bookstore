@@ -1,0 +1,15 @@
+<template if:true={isConnected}>
+<h2 class="header">{User.title.Value}</h2>
+    <ul class="list-vertical">
+    <li><ecl-link url={profile_url}>{Label.bookstore_modUser_profile.Value}</ecl-link></li>
+        <li><div class="link" role="link" onclick={handleLogout}>Desconectar</div></li>
+    </ul>
+</template>
+
+<template if:false={isConnected}>
+    <h2 class="header">Usuário</h2>
+    <ul class="list-vertical">
+        <li><ecl-link url={login_url}>conectar</ecl-link></li>
+                <li><ecl-link url={subscribe_url}>Cadastrar-me agora</ecl-link></li>
+                </ul>
+</template>

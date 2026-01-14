@@ -34,8 +34,8 @@ class eclMod_bookstoreLogin extends eclMod {
         this.passwordValue = '';
         this.identifierFocus = true;
         this.passwordReadonly = false;
-        this.levelUpUrl = page.url(page.application.parent.path);
-        this.levelUpTitle = page.application.parent.data.text.title;
+        this.levelUpUrl = page.url(page.domain.path);
+        this.levelUpTitle = 'página inicial';
     }
 
     renderedCallback() {

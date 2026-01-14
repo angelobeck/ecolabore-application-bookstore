@@ -1,0 +1,14 @@
+{
+    "text": {
+        "title": {
+"pt": {
+    "value": "Identificador já existe"
+}
+        },
+        "content": {
+            "pt": {
+                "value": "O identificador #q{value}#q já está em uso por outro usuário. Por favor, defina um identificador diferente."
+            }
+        }
+    }
+}

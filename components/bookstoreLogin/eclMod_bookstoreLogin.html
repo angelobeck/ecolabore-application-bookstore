@@ -1,14 +1,14 @@
 <template if:true={step} if:compare="identifier">
     <h1 class="header">{Application.title.Value}</h1>
-    <label>
+    <label class="field">
         <p>Informe seu CPF, telefone ou email</p>
         <div>
-            <input class="field_text_input" type="text" wire:element={identifierElement} onkeydown={handleIdentifierKeydown} />
+            <input autocomplete="username" class="field_text_input" type="text" wire:element={identifierElement} onkeydown={handleIdentifierKeydown} />
         </div>
     </label>
-    <button class="general_button" onclick={handleIdentifierAction}>
+    <ecl-button onclick={handleIdentifierAction}>
         Próxima
-    </button>
+    </ecl-button>
     <div style="margin-top: 1rem">
         <ecl-link url={levelUpUrl} >
             Voltar para {levelUpTitle.Value}
@@ -18,22 +18,22 @@
 
 <template if:true={step} if:compare="password">
     <h1 class="header">{Application.title.Value}</h1>
-    <label>
+    <label class="field">
         <p>Senha</p>
         <div>
-            <input class="field_text_input" type={passwordType} wire:element={passwordElement} readonly={passwordReadonly}
+            <input autocomplete="current-password" class="field_text_input" type={passwordType} wire:element={passwordElement} readonly={passwordReadonly}
                 onkeydown={handlePasswordKeydown} />
         </div>
     </label>
     <div>
-        <label>
+        <label class="field">
             <input type="checkbox" onclick={handlePasswordVisibility} disabled={passwordReadonly} />
             Exibir senha
         </label>
     </div>
-    <button class="general_button" onclick={handlePasswordAction} aria-disabled={passwordReadonly}>
+    <ecl-button onclick={handlePasswordAction} aria-disabled={passwordReadonly}>
         Conectar
-    </button>
+    </ecl-button>
     <div>
         <ecl-link url={levelUpUrl}>
             Voltar para {levelUpTitle.Value}
@@ -44,18 +44,18 @@
 <template if:true={step} if:compare="welcome">
     <h1 class="header" wire:element={welcomeElement} tabindex="0">Olá!</h1>
     <p>Você está conectado à ACIC.</p>
-    <button onclick={handleWelcomeAction}>
+    <ecl-button onclick={handleWelcomeAction}>
         Ok
-    </button>
+    </ecl-button>
 </template>
 
 <template if:true={step} if:compare="error">
     <h1 class="header" wire:element={errorElement} tabindex="0">Ooops!</h1>
     <p>{errorMessage}</p>
-    <button class="general_button" onclick={handleErrorRetry}>
+    <ecl-button onclick={handleErrorRetry}>
         Tentar novamente
-    </button>
-    <button class="general_button" class="general_button" onclick={handleErrorCancel}>
+    </ecl-button>
+    <ecl-button class="general_button" onclick={handleErrorCancel}>
         Cancelar
-    </button>
+    </ecl-button>
 </template>

@@ -10,21 +10,19 @@ class eclMod_bookstoreCadastro_filterNick extends eclMod {
     }
 
     refreshCallback() {
-        var value = '';
         if (!this.formulary)
             return;
 
         if (!this.control.flags || !this.control.flags.target)
             return;
 
-        value = this.formulary.getField(this.control.flags.target);
+        this.value = this.formulary.getField(this.control.flags.target);
 
-        if (!value || value === '') {
-            value = this.formulary.getField('text.title.pt.value');
-            this.formulary.setField(this.control.flags.target, value);
+        if (!this.value || this.value === '') {
+            this.value = this.formulary.getField('text.title.pt.value');
+            this.formulary.setField(this.control.flags.target, this.value);
         }
 
-        this.value = value;
     }
 
     disconnectedCallback() {

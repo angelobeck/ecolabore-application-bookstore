@@ -13,6 +13,8 @@ class eclEndpoint_bookstorePerfil_public extends eclEndpoint
 $userName = $this->page->session['user']['name'];
 
         $user = $store->user->open($userName);
+        if(!$user)
+            return $this->error();
         $userId = $user['id'];
 
         $userPersonal = $store->userContent->open($userId, '-personal');

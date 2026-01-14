@@ -1,7 +1,8 @@
 {
     "flags": {
-        "filter": "filter_string",
+        "filter": "bookstoreCadastro_filterFullName",
         "name": "user_name",
+        "id": "bookstoreCadastro_editUserName",
         "required": true,
         "target": "text.title.pt.value"
     },

@@ -1,9 +1,21 @@
 <h2 class="header">Biblioteca Virtual da ACIC</h2>
 
+<ecl-markdown value={mensageria.content} />
+    
 <mod name="user" />
 
-<p if:false={User.name}>Acesse aos <ecl-link url={url}>livros de domínio público</ecl-link> e comece a ler on-line.</p>
+<div if:false={System.app}>
+<p if:false={User.name}>Acesse os <ecl-link url={url}>livros de domínio público</ecl-link> e comece a ler on-line.</p>
 <p>Na nossa página de pesquisa você também poderá consultar livros em tinta e em braille, disponíveis para empréstimo em nossa biblioteca física.</p>
+</div>
+
+<h2 class="header">Novidades da biblioteca</h2>
+<ul class="list-vertical" for:each={_recents_} for:item={recent}>
+    <li>
+        <ecl-link url={recent.url}>{recent.title.Value} - {recent.author.Value}</ecl-link>
+    </li>
+</ul>
+
 
 <h2 class="header">Sobre a Biblioteca</h2>
 <ul class="list-vertical" for:each={_sections_} for:item={section}>

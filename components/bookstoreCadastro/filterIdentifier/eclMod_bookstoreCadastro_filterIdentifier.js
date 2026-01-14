@@ -10,18 +10,15 @@ class eclMod_bookstoreCadastro_filterIdentifier extends eclMod {
     }
 
     refreshCallback() {
-        var value;
         if (!this.formulary)
             return;
 
-        if (this.control.flags && this.control.flags.target)
-            value = this.formulary.getField(this.control.flags.target);
+        this.value = this.formulary.getField('identifier');
 
-        if(!value || value === '') {
-            value = eclIo_convert.slug(this.formulary.getField('text.title.pt.value'));
-            this.formulary.setField(this.control.flags.target, value);
+        if (!this.value || this.value === '') {
+            this.value = eclIo_convert.slug(this.formulary.getField('text.title.pt.value'));
+            this.formulary.setField('identifier', this.value);
         }
-        this.value = value;
     }
 
     disconnectedCallback() {
@@ -32,10 +29,10 @@ class eclMod_bookstoreCadastro_filterIdentifier extends eclMod {
     }
 
     handleChange(event) {
-        if (!this.formulary || !this.control.flags || !this.control.flags.target)
+        if (!this.formulary)
             return;
 
-        this.formulary.setField(this.control.flags.target, event.detail.value);
+        this.formulary.setField('identifier', event.detail.value);
     }
 
 }
