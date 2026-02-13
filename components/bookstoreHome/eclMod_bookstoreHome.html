@@ -1,6 +1,6 @@
 <h2 class="header">Biblioteca Virtual da ACIC</h2>
 
-<ecl-markdown value={mensageria.content} />
+<ecl-markdown content={mensageria.content} />
     
 <mod name="user" />
 
@@ -12,7 +12,7 @@
 <h2 class="header">Novidades da biblioteca</h2>
 <ul class="list-vertical" for:each={_recents_} for:item={recent}>
     <li>
-        <ecl-link url={recent.url}>{recent.title.Value} - {recent.author.Value}</ecl-link>
+        <ecl-link url={recent.url}>{recent.title.Value}<span if:true={recent.author}> - </span>{recent.author.Value}</ecl-link>
     </li>
 </ul>
 

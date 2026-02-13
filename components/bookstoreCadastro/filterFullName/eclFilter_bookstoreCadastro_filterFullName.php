@@ -24,6 +24,8 @@ class eclFilter_bookstoreCadastro_filterFullName extends eclFilter
     static function sanitize(eclEngine_formulary $formulary, array $control): array
     {
         $value = $formulary->getReceived($control['target']);
+        if(!is_string($value))
+            $value = '';
         $value = trim($value);
 
         if (!is_string($value) || strlen($value) == 0)

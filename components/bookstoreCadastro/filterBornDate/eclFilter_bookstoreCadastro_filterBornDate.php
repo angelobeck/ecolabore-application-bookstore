@@ -76,27 +76,31 @@ class eclFilter_bookstoreCadastro_filterBornDate extends eclFilter
         $month = str_pad(strval($intMonth), 2, '0', STR_PAD_LEFT);
         $year = strval($intYear);
 
-        $timeBornDate = strtotime($year . '-' . $month . '-' . $day);
+        if ($intYear > 2005) {
+            $timeBornDate = strtotime($year . '-' . $month . '-' . $day);
 
-        $year18 = strval($intYear + 18);
-        $timeMinor = strtotime($year18 . '-' . $month . '-' . $day);
-        if ($timeMinor < TIME)
-            $timeMinor = 0;
+            $year18 = strval($intYear + 18);
+            $timeMinor = strtotime($year18 . '-' . $month . '-' . $day);
+            if ($timeMinor < TIME)
+                $timeMinor = 0;
 
-        $year14 = strval($intYear + 14);
-        $timeKid = strtotime($year14 . '-' . $month . '-' . $day);
-        if ($timeKid < TIME)
-            $timeKid = 0;
+            $year14 = strval($intYear + 14);
+            $timeKid = strtotime($year14 . '-' . $month . '-' . $day);
+            if ($timeKid < TIME)
+                $timeKid = 0;
 
-        if ($timeBornDate > TIME)
-            return [
-                'message' => 'bookstoreCadastro_filterBornDate_invalidValue',
-                'context' => ['id' => $control['id'] ?? '']
-            ];
+            if ($timeBornDate > TIME)
+                return [
+                    'message' => 'bookstoreCadastro_filterBornDate_invalidValue',
+                    'context' => ['id' => $control['id'] ?? '']
+                ];
 
-        $formulary->setField('kid', $timeKid);
-        $formulary->setField('minor', $timeMinor);
-
+            $formulary->setField('kid', $timeKid);
+            $formulary->setField('minor', $timeMinor);
+        } else {
+            $formulary->setField('kid', 0);
+            $formulary->setField('minor', 0);
+        }
         $formulary->setField($control['target'], $day . '/' . $month . '/' . $year);
         return [];
     }

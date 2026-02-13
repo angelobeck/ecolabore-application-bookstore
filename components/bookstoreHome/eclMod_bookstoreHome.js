@@ -30,13 +30,19 @@ class eclMod_bookstoreHome extends eclMod {
     }
 
     get _recents_() {
-            return this.recents.map(book => {
+            var recents = this.recents.map(book => {
             return {
                 title: book.text.title,
                 author: book.text.author,
                 url: page.url([page.domain.name, 'livros',  book.name])
             };
         });
+
+        recents.push({
+            title: 'Ver mais títulos adicionados recentemente',
+            url: page.url([page.domain.name, 'livros',  '-recentes'])
+        });
+        return recents;
     }
 
 }
